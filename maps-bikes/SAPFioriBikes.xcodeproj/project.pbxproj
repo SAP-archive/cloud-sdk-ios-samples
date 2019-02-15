@@ -1,0 +1,597 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AA2EAD3B21F7A31B00A18856 /* WalkZoneOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2EAD3A21F7A31B00A18856 /* WalkZoneOverlay.swift */; };
+		AA2EAD4021F7A63E00A18856 /* BikePathOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2EAD3F21F7A63E00A18856 /* BikePathOverlay.swift */; };
+		AA2EAD4221F7AC5100A18856 /* BreweryAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2EAD4121F7AC5100A18856 /* BreweryAnnotation.swift */; };
+		AA51BBE8219E9A9A004B482C /* BikeStationAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA51BBE7219E9A9A004B482C /* BikeStationAnnotationView.swift */; };
+		AA5B00BB21D5AB7600355128 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA5B00BA21D5AB7600355128 /* Images.xcassets */; };
+		AA5B00BF21D5B7EA00355128 /* ContentControllerObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5B00BE21D5B7EA00355128 /* ContentControllerObject.swift */; };
+		AA62D45F219D39DB00F4931C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA62D45E219D39DB00F4931C /* AppDelegate.swift */; };
+		AA62D461219D39DB00F4931C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA62D460219D39DB00F4931C /* ViewController.swift */; };
+		AA62D464219D39DB00F4931C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA62D462219D39DB00F4931C /* Main.storyboard */; };
+		AA62D467219D39DB00F4931C /* SAPFioriBikes.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AA62D465219D39DB00F4931C /* SAPFioriBikes.xcdatamodeld */; };
+		AA62D469219D39DE00F4931C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA62D468219D39DE00F4931C /* Assets.xcassets */; };
+		AA62D46C219D39DE00F4931C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA62D46A219D39DE00F4931C /* LaunchScreen.storyboard */; };
+		AA62D477219D39DE00F4931C /* SAPFioriBikesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA62D476219D39DE00F4931C /* SAPFioriBikesTests.swift */; };
+		AA62D483219D3AEB00F4931C /* BikeStationAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA62D482219D3AEB00F4931C /* BikeStationAnnotation.swift */; };
+		AA6A4B1D21A4A06C00C34319 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6A4B1C21A4A06C00C34319 /* Colors.swift */; };
+		AA6A4B2121A4A08900C34319 /* MapModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6A4B2021A4A08800C34319 /* MapModel.swift */; };
+		AA9C0DCA21A4EE2D001AC4D6 /* station_status.json in Resources */ = {isa = PBXBuildFile; fileRef = AA9C0DC921A4EE2D001AC4D6 /* station_status.json */; };
+		AA9C0DCC21A4EE4E001AC4D6 /* station_information.json in Resources */ = {isa = PBXBuildFile; fileRef = AA9C0DCB21A4EE4E001AC4D6 /* station_information.json */; };
+		AA9C0DCE21A4F9FB001AC4D6 /* StationInformationRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9C0DCD21A4F9FB001AC4D6 /* StationInformationRequest.swift */; };
+		AA9C0DD021A4FA48001AC4D6 /* StationStatusRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9C0DCF21A4FA48001AC4D6 /* StationStatusRequest.swift */; };
+		AABA53CF21D76B1C0097715E /* bart.geojson in Resources */ = {isa = PBXBuildFile; fileRef = AABA53CE21D76B1C0097715E /* bart.geojson */; };
+		AABC859521F010D90042F864 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABC859421F010D90042F864 /* SettingsViewController.swift */; };
+		AABC859A21F017110042F864 /* LayerEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABC859921F017110042F864 /* LayerEnum.swift */; };
+		AAC77CE021D89B0F00EC548C /* BartLineOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC77CDF21D89B0F00EC548C /* BartLineOverlay.swift */; };
+		AAEB161821F518ED001E28C3 /* CreateGeometryResultsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAEB161721F518ED001E28C3 /* CreateGeometryResultsController.swift */; };
+		AAF5C39621EF0F6300876D0E /* BartData_model.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF5C39521EF0F6300876D0E /* BartData_model.swift */; };
+		AAF6FB8B21F7D63E007B4697 /* VenueOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF6FB8A21F7D63E007B4697 /* VenueOverlay.swift */; };
+		AAF90F5A21D565D200540479 /* SearchResultsControllerObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF90F5921D565D200540479 /* SearchResultsControllerObject.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		AA62D473219D39DE00F4931C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AA62D453219D39DB00F4931C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AA62D45A219D39DB00F4931C;
+			remoteInfo = SAPFioriBikes;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		AA2EAD3A21F7A31B00A18856 /* WalkZoneOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkZoneOverlay.swift; sourceTree = "<group>"; };
+		AA2EAD3F21F7A63E00A18856 /* BikePathOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BikePathOverlay.swift; sourceTree = "<group>"; };
+		AA2EAD4121F7AC5100A18856 /* BreweryAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreweryAnnotation.swift; sourceTree = "<group>"; };
+		AA51BBE7219E9A9A004B482C /* BikeStationAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BikeStationAnnotationView.swift; sourceTree = "<group>"; };
+		AA5B00BA21D5AB7600355128 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		AA5B00BE21D5B7EA00355128 /* ContentControllerObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentControllerObject.swift; sourceTree = "<group>"; };
+		AA62D45B219D39DB00F4931C /* SAPFioriBikes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SAPFioriBikes.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA62D45E219D39DB00F4931C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		AA62D460219D39DB00F4931C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		AA62D463219D39DB00F4931C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		AA62D466219D39DB00F4931C /* SAPFioriBikes.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SAPFioriBikes.xcdatamodel; sourceTree = "<group>"; };
+		AA62D468219D39DE00F4931C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AA62D46B219D39DE00F4931C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		AA62D46D219D39DE00F4931C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AA62D472219D39DE00F4931C /* SAPFioriBikesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SAPFioriBikesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA62D476219D39DE00F4931C /* SAPFioriBikesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SAPFioriBikesTests.swift; sourceTree = "<group>"; };
+		AA62D478219D39DE00F4931C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AA62D482219D3AEB00F4931C /* BikeStationAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BikeStationAnnotation.swift; sourceTree = "<group>"; };
+		AA6A4B1C21A4A06C00C34319 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		AA6A4B2021A4A08800C34319 /* MapModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapModel.swift; sourceTree = "<group>"; };
+		AA9C0DC921A4EE2D001AC4D6 /* station_status.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = station_status.json; sourceTree = "<group>"; };
+		AA9C0DCB21A4EE4E001AC4D6 /* station_information.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = station_information.json; sourceTree = "<group>"; };
+		AA9C0DCD21A4F9FB001AC4D6 /* StationInformationRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationInformationRequest.swift; sourceTree = "<group>"; };
+		AA9C0DCF21A4FA48001AC4D6 /* StationStatusRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationStatusRequest.swift; sourceTree = "<group>"; };
+		AABA53CE21D76B1C0097715E /* bart.geojson */ = {isa = PBXFileReference; lastKnownFileType = text; path = bart.geojson; sourceTree = "<group>"; };
+		AABC859421F010D90042F864 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		AABC859921F017110042F864 /* LayerEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayerEnum.swift; sourceTree = "<group>"; };
+		AAC77CDF21D89B0F00EC548C /* BartLineOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BartLineOverlay.swift; sourceTree = "<group>"; };
+		AAEB161721F518ED001E28C3 /* CreateGeometryResultsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateGeometryResultsController.swift; sourceTree = "<group>"; };
+		AAF5C39521EF0F6300876D0E /* BartData_model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BartData_model.swift; sourceTree = "<group>"; };
+		AAF6FB8A21F7D63E007B4697 /* VenueOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueOverlay.swift; sourceTree = "<group>"; };
+		AAF90F5921D565D200540479 /* SearchResultsControllerObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsControllerObject.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AA62D458219D39DB00F4931C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AA62D46F219D39DE00F4931C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AA62D452219D39DB00F4931C = {
+			isa = PBXGroup;
+			children = (
+				AA5B00BA21D5AB7600355128 /* Images.xcassets */,
+				AA62D45D219D39DB00F4931C /* SAPFioriBikes */,
+				AA62D475219D39DE00F4931C /* SAPFioriBikesTests */,
+				AA62D45C219D39DB00F4931C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		AA62D45C219D39DB00F4931C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AA62D45B219D39DB00F4931C /* SAPFioriBikes.app */,
+				AA62D472219D39DE00F4931C /* SAPFioriBikesTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AA62D45D219D39DB00F4931C /* SAPFioriBikes */ = {
+			isa = PBXGroup;
+			children = (
+				AA62D460219D39DB00F4931C /* ViewController.swift */,
+				AA6A4B2021A4A08800C34319 /* MapModel.swift */,
+				AAF90F5921D565D200540479 /* SearchResultsControllerObject.swift */,
+				AA5B00BE21D5B7EA00355128 /* ContentControllerObject.swift */,
+				AABC859421F010D90042F864 /* SettingsViewController.swift */,
+				AAEB161721F518ED001E28C3 /* CreateGeometryResultsController.swift */,
+				AA62D46D219D39DE00F4931C /* Info.plist */,
+				AAF6FB8F21F7E0B5007B4697 /* Annotations-Overlays */,
+				AA62D481219D3AD900F4931C /* DataModel */,
+				AA9C0DD121A4FC37001AC4D6 /* Utils */,
+			);
+			path = SAPFioriBikes;
+			sourceTree = "<group>";
+		};
+		AA62D475219D39DE00F4931C /* SAPFioriBikesTests */ = {
+			isa = PBXGroup;
+			children = (
+				AA62D476219D39DE00F4931C /* SAPFioriBikesTests.swift */,
+				AA62D478219D39DE00F4931C /* Info.plist */,
+			);
+			path = SAPFioriBikesTests;
+			sourceTree = "<group>";
+		};
+		AA62D481219D3AD900F4931C /* DataModel */ = {
+			isa = PBXGroup;
+			children = (
+				AA9C0DC921A4EE2D001AC4D6 /* station_status.json */,
+				AA9C0DCB21A4EE4E001AC4D6 /* station_information.json */,
+				AABA53CE21D76B1C0097715E /* bart.geojson */,
+				AA9C0DCF21A4FA48001AC4D6 /* StationStatusRequest.swift */,
+				AA9C0DCD21A4F9FB001AC4D6 /* StationInformationRequest.swift */,
+				AAF5C39521EF0F6300876D0E /* BartData_model.swift */,
+				AABC859921F017110042F864 /* LayerEnum.swift */,
+			);
+			path = DataModel;
+			sourceTree = "<group>";
+		};
+		AA9C0DD121A4FC37001AC4D6 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				AA62D45E219D39DB00F4931C /* AppDelegate.swift */,
+				AA6A4B1C21A4A06C00C34319 /* Colors.swift */,
+				AA62D462219D39DB00F4931C /* Main.storyboard */,
+				AA62D468219D39DE00F4931C /* Assets.xcassets */,
+				AA62D46A219D39DE00F4931C /* LaunchScreen.storyboard */,
+				AA62D465219D39DB00F4931C /* SAPFioriBikes.xcdatamodeld */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		AAF6FB8F21F7E0B5007B4697 /* Annotations-Overlays */ = {
+			isa = PBXGroup;
+			children = (
+				AA51BBE7219E9A9A004B482C /* BikeStationAnnotationView.swift */,
+				AA62D482219D3AEB00F4931C /* BikeStationAnnotation.swift */,
+				AAC77CDF21D89B0F00EC548C /* BartLineOverlay.swift */,
+				AA2EAD3F21F7A63E00A18856 /* BikePathOverlay.swift */,
+				AAF6FB8A21F7D63E007B4697 /* VenueOverlay.swift */,
+				AA2EAD3A21F7A31B00A18856 /* WalkZoneOverlay.swift */,
+				AA2EAD4121F7AC5100A18856 /* BreweryAnnotation.swift */,
+			);
+			path = "Annotations-Overlays";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AA62D45A219D39DB00F4931C /* SAPFioriBikes */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AA62D47B219D39DE00F4931C /* Build configuration list for PBXNativeTarget "SAPFioriBikes" */;
+			buildPhases = (
+				AA62D457219D39DB00F4931C /* Sources */,
+				AA62D458219D39DB00F4931C /* Frameworks */,
+				AA62D459219D39DB00F4931C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SAPFioriBikes;
+			productName = SAPFioriBikes;
+			productReference = AA62D45B219D39DB00F4931C /* SAPFioriBikes.app */;
+			productType = "com.apple.product-type.application";
+		};
+		AA62D471219D39DE00F4931C /* SAPFioriBikesTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AA62D47E219D39DE00F4931C /* Build configuration list for PBXNativeTarget "SAPFioriBikesTests" */;
+			buildPhases = (
+				AA62D46E219D39DE00F4931C /* Sources */,
+				AA62D46F219D39DE00F4931C /* Frameworks */,
+				AA62D470219D39DE00F4931C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AA62D474219D39DE00F4931C /* PBXTargetDependency */,
+			);
+			name = SAPFioriBikesTests;
+			productName = SAPFioriBikesTests;
+			productReference = AA62D472219D39DE00F4931C /* SAPFioriBikesTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AA62D453219D39DB00F4931C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1010;
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = "Takahashi, Alex";
+				TargetAttributes = {
+					AA62D45A219D39DB00F4931C = {
+						CreatedOnToolsVersion = 10.1;
+					};
+					AA62D471219D39DE00F4931C = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = AA62D45A219D39DB00F4931C;
+					};
+				};
+			};
+			buildConfigurationList = AA62D456219D39DB00F4931C /* Build configuration list for PBXProject "SAPFioriBikes" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = AA62D452219D39DB00F4931C;
+			productRefGroup = AA62D45C219D39DB00F4931C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AA62D45A219D39DB00F4931C /* SAPFioriBikes */,
+				AA62D471219D39DE00F4931C /* SAPFioriBikesTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AA62D459219D39DB00F4931C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA9C0DCA21A4EE2D001AC4D6 /* station_status.json in Resources */,
+				AA62D46C219D39DE00F4931C /* LaunchScreen.storyboard in Resources */,
+				AA62D469219D39DE00F4931C /* Assets.xcassets in Resources */,
+				AA5B00BB21D5AB7600355128 /* Images.xcassets in Resources */,
+				AA9C0DCC21A4EE4E001AC4D6 /* station_information.json in Resources */,
+				AABA53CF21D76B1C0097715E /* bart.geojson in Resources */,
+				AA62D464219D39DB00F4931C /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AA62D470219D39DE00F4931C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AA62D457219D39DB00F4931C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA2EAD4021F7A63E00A18856 /* BikePathOverlay.swift in Sources */,
+				AA6A4B2121A4A08900C34319 /* MapModel.swift in Sources */,
+				AA62D461219D39DB00F4931C /* ViewController.swift in Sources */,
+				AAF90F5A21D565D200540479 /* SearchResultsControllerObject.swift in Sources */,
+				AA62D45F219D39DB00F4931C /* AppDelegate.swift in Sources */,
+				AA9C0DCE21A4F9FB001AC4D6 /* StationInformationRequest.swift in Sources */,
+				AA5B00BF21D5B7EA00355128 /* ContentControllerObject.swift in Sources */,
+				AAEB161821F518ED001E28C3 /* CreateGeometryResultsController.swift in Sources */,
+				AA2EAD4221F7AC5100A18856 /* BreweryAnnotation.swift in Sources */,
+				AA2EAD3B21F7A31B00A18856 /* WalkZoneOverlay.swift in Sources */,
+				AAC77CE021D89B0F00EC548C /* BartLineOverlay.swift in Sources */,
+				AABC859521F010D90042F864 /* SettingsViewController.swift in Sources */,
+				AA6A4B1D21A4A06C00C34319 /* Colors.swift in Sources */,
+				AA62D467219D39DB00F4931C /* SAPFioriBikes.xcdatamodeld in Sources */,
+				AA62D483219D3AEB00F4931C /* BikeStationAnnotation.swift in Sources */,
+				AABC859A21F017110042F864 /* LayerEnum.swift in Sources */,
+				AA9C0DD021A4FA48001AC4D6 /* StationStatusRequest.swift in Sources */,
+				AAF5C39621EF0F6300876D0E /* BartData_model.swift in Sources */,
+				AAF6FB8B21F7D63E007B4697 /* VenueOverlay.swift in Sources */,
+				AA51BBE8219E9A9A004B482C /* BikeStationAnnotationView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AA62D46E219D39DE00F4931C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA62D477219D39DE00F4931C /* SAPFioriBikesTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		AA62D474219D39DE00F4931C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AA62D45A219D39DB00F4931C /* SAPFioriBikes */;
+			targetProxy = AA62D473219D39DE00F4931C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		AA62D462219D39DB00F4931C /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AA62D463219D39DB00F4931C /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		AA62D46A219D39DE00F4931C /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AA62D46B219D39DE00F4931C /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		AA62D479219D39DE00F4931C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		AA62D47A219D39DE00F4931C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		AA62D47C219D39DE00F4931C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = SAPFioriBikes/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = SAP.SAPFioriBikes;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		AA62D47D219D39DE00F4931C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = SAPFioriBikes/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = SAP.SAPFioriBikes;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		AA62D47F219D39DE00F4931C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3F8Y9D4FUY;
+				INFOPLIST_FILE = SAPFioriBikesTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = SAP.SAPFioriBikesTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SAPFioriBikes.app/SAPFioriBikes";
+			};
+			name = Debug;
+		};
+		AA62D480219D39DE00F4931C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3F8Y9D4FUY;
+				INFOPLIST_FILE = SAPFioriBikesTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = SAP.SAPFioriBikesTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SAPFioriBikes.app/SAPFioriBikes";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AA62D456219D39DB00F4931C /* Build configuration list for PBXProject "SAPFioriBikes" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AA62D479219D39DE00F4931C /* Debug */,
+				AA62D47A219D39DE00F4931C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AA62D47B219D39DE00F4931C /* Build configuration list for PBXNativeTarget "SAPFioriBikes" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AA62D47C219D39DE00F4931C /* Debug */,
+				AA62D47D219D39DE00F4931C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AA62D47E219D39DE00F4931C /* Build configuration list for PBXNativeTarget "SAPFioriBikesTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AA62D47F219D39DE00F4931C /* Debug */,
+				AA62D480219D39DE00F4931C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		AA62D465219D39DB00F4931C /* SAPFioriBikes.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				AA62D466219D39DB00F4931C /* SAPFioriBikes.xcdatamodel */,
+			);
+			currentVersion = AA62D466219D39DB00F4931C /* SAPFioriBikes.xcdatamodel */;
+			path = SAPFioriBikes.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = AA62D453219D39DB00F4931C /* Project object */;
+}

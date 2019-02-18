@@ -29,6 +29,11 @@ This repository hosts an iOS application AAACardScanApp built using SAP Cloud Pl
 
 * [SAPFiori Reference](https://help.sap.com/doc/978e4f6c968c4cc5a30f9d324aa4b1d7/Latest/en-US/Documents/Frameworks/SAPFiori/index.html)
 
+## Authors
+
+* **Sourabh Ketkale** - *Initial work* - [sourabhketkale](https://github.com/sourabhketkale)
+* **Alex Takahashi** - *Reviewer* - [alextakahashi](https://github.com/alextakahashi)
+
 ## Acknowledgments
 
 * [README-Template](https://gist.github.com/PurpleBooth/109311bb0361f32d87a2)

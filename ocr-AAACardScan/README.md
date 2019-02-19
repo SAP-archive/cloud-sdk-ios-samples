@@ -11,7 +11,7 @@ This repository hosts an iOS application AAACardScanApp built using SAP Cloud Pl
 
 4. Build and Run 📸
 
-5. Walkthrough the code implementation [blogpost](https://github.wdf.sap.corp/I859974/AAACardScanApp/blob/master/AAACardScanApp.md)
+5. Walkthrough the code implementation [blogpost](AAACardScanApp.md)
 
 ### Prerequisites
 
@@ -38,12 +38,6 @@ This repository hosts an iOS application AAACardScanApp built using SAP Cloud Pl
 
 * [README-Template](https://gist.github.com/PurpleBooth/109311bb0361f32d87a2)
 * [SwiftLint](https://github.com/realm/SwiftLint)
-
-<!--  I don't know how Licenses work, we might have to ask Andreas about this-->
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
 
 ## Disclaimer
 

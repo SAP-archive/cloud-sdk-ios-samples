@@ -1,6 +1,7 @@
 //
-//  Created by Takahashi, Alex.
-//  Copyright © 2019 Ketkale, Sourabh Raosaheb. All rights reserved.
+//  AAACardFormTableViewController.swift
+//
+//  Copyright © 2019 SAP SE or an SAP affiliate company. All rights reserved.
 //
 
 import UIKit

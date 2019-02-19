@@ -30,7 +30,7 @@ observation = self.layer.observe(\.bounds) { (observed, _) in
 
 ### Prerequisites
 
-* Xcode 10.0+
+* Xcode 10.1+
 
 ## Authors
 

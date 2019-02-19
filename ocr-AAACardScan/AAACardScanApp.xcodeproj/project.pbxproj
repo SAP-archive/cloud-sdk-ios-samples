@@ -313,13 +313,10 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
-					/Users/i859974/Documents/Work/Projects/SapMobility/apps/AAACardScanApp/Frameworks/,
-					"$(PROJECT_DIR)/Frameworks",
 				);
 				INFOPLIST_FILE = AAACardScanApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
-					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.AAACardScanApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -337,13 +334,10 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
-					/Users/i859974/Documents/Work/Projects/SapMobility/apps/AAACardScanApp/Frameworks/,
-					"$(PROJECT_DIR)/Frameworks",
 				);
 				INFOPLIST_FILE = AAACardScanApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
-					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.AAACardScanApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";

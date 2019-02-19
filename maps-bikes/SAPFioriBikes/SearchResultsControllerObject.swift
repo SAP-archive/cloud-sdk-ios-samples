@@ -40,11 +40,14 @@ extension SearchResultsControllerObject: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: FUIObjectTableViewCell.reuseIdentifier) as? FUIObjectTableViewCell else { return UITableViewCell() }
+        let defaultCell = UITableViewCell()
+        defaultCell.backgroundColor = .clear
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: FUIObjectTableViewCell.reuseIdentifier) as? FUIObjectTableViewCell else { return defaultCell }
+        guard indexPath.row < searchResults.count else { return defaultCell }
         cell.backgroundColor = UIColor.clear
         let bikeStation = searchResults[indexPath.row]
         cell.headlineText = bikeStation.title
-        cell.subheadlineText = bikeStation.distanceToUserString
+        cell.subheadlineText = bikeStation.distanceToUserString ?? "Calculating..."
         cell.statusImage = UIImage(named: "bicycle")
         cell.statusImageView.tintColor = bikeStation.numBikes > 0 ? UIColor.preferredFioriColor(forStyle: .positive) : UIColor.preferredFioriColor(forStyle: .negative)
         cell.substatusImage = FUIIconLibrary.system.flashOff.withRenderingMode(.alwaysTemplate)

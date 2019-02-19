@@ -42,6 +42,8 @@ This project showcases some of the [Map Floorplan](https://experience.sap.com/fi
 ## Built With
 
 * [Ford GoBike System Data](https://www.fordgobike.com/system-data)
+* [StellarJay](https://github.com/sstadelman/stellarjay)
+* [Uber Common](https://github.com/uber-common/deck.gl-data/blob/master/website/bart.geo.json)
 
 ## Authors
 

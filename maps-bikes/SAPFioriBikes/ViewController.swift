@@ -8,7 +8,7 @@ import UIKit
 import MapKit
 import SAPFiori
 
-class ViewController: FUIMKMapFloorplanViewController, MKMapViewDelegate, SearchResultsProducing, CLLocationManagerDelegate {
+class ViewController: FUIMKMapFloorplanViewController, MKMapViewDelegate, SearchResultsProducing, CLLocationManagerDelegate, FUIMKMapViewDelegate {
 
     var mapModel = FioriBikeMapModel()
     let isClusteringStations = true
@@ -26,6 +26,10 @@ class ViewController: FUIMKMapFloorplanViewController, MKMapViewDelegate, Search
             detailPanel.content.tableView.reloadData()
         }
     }
+    
+    // MARK: Settings
+    var retainedSettingsController: SettingsViewController!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,6 +55,7 @@ class ViewController: FUIMKMapFloorplanViewController, MKMapViewDelegate, Search
         
         // MARK: FUIMKMapViewDataSource
         self.dataSource = self
+        self.delegate = self
 
         // MARK: FUIMapLegend
         legend.headerTextView.text = mapModel.legendTitle
@@ -70,6 +75,10 @@ class ViewController: FUIMKMapFloorplanViewController, MKMapViewDelegate, Search
         detailPanel.searchResults.searchBar.delegate = searchResultsObject
         detailPanel.content.tableView.register(FUIMapDetailTagObjectTableViewCell.self, forCellReuseIdentifier: FUIMapDetailTagObjectTableViewCell.reuseIdentifier)
         detailPanel.content.tableView.register(FUIMapDetailPanel.ButtonTableViewCell.self, forCellReuseIdentifier: FUIMapDetailPanel.ButtonTableViewCell.reuseIdentifier)
+        
+        // MARK: Settings
+        retainedSettingsController = SettingsViewController(mapModel)
+        settingsController = retainedSettingsController
     }
     
     internal func pushContent(_ bikeStationAnnotation: BikeStationAnnotation) {
@@ -110,10 +119,29 @@ class ViewController: FUIMKMapFloorplanViewController, MKMapViewDelegate, Search
         return nil
     }
     
+    func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
+        switch overlay {
+        case is MKPolyline:
+            let renderer = MKPolylineRenderer(overlay: overlay)
+            renderer.strokeColor = Colors.bartDefaultBlue.withAlphaComponent(0.6)
+            renderer.lineWidth = 2
+            return renderer
+        case is MKPolygon:
+            let renderer = MKPolygonRenderer(overlay: overlay)
+            renderer.strokeColor = Colors.bartBlue.withAlphaComponent(0.6)
+            renderer.lineWidth = 1
+            renderer.fillColor = Colors.bartBlue.withAlphaComponent(0.15)
+            return renderer
+        default:
+            return MKOverlayRenderer()
+        }
+    }
+    
     var locationManager: CLLocationManager!
     var currentLocation: CLLocation? {
         didSet {
             mapModel.userLocation = currentLocation
+            detailPanel.searchResults.tableView.reloadData()
         }
     }
     
@@ -130,6 +158,10 @@ class ViewController: FUIMKMapFloorplanViewController, MKMapViewDelegate, Search
             }
         }
     }
+    
+    override func reloadData() {
+        super.reloadData()
+    }
 }
 
 // MARK: FUIMKMapViewDataSource
@@ -137,7 +169,14 @@ class ViewController: FUIMKMapFloorplanViewController, MKMapViewDelegate, Search
 extension ViewController: FUIMKMapViewDataSource {
     
     func mapView(_ mapView: MKMapView, geometriesForLayer layer: FUIGeometryLayer) -> [FUIAnnotation] {
-        return mapModel.stationModel
+        switch layer.displayName {
+        case Layer.bikes:
+            return mapModel.stationModel
+        case Layer.bart:
+            return mapModel.bartLineModel
+        default:
+            preconditionFailure()
+        }
     }
     
     func numberOfLayers(in mapView: MKMapView) -> Int {
@@ -148,5 +187,3 @@ extension ViewController: FUIMKMapViewDataSource {
         return mapModel.layerModel[index]
     }
 }
-
-// ¹: https://stackoverflow.com/questions/25449469/show-current-location-and-update-location-in-mkmapview-in-swift

@@ -23,6 +23,11 @@
 		AA9C0DCC21A4EE4E001AC4D6 /* station_information.json in Resources */ = {isa = PBXBuildFile; fileRef = AA9C0DCB21A4EE4E001AC4D6 /* station_information.json */; };
 		AA9C0DCE21A4F9FB001AC4D6 /* StationInformationRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9C0DCD21A4F9FB001AC4D6 /* StationInformationRequest.swift */; };
 		AA9C0DD021A4FA48001AC4D6 /* StationStatusRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9C0DCF21A4FA48001AC4D6 /* StationStatusRequest.swift */; };
+		AABA53CF21D76B1C0097715E /* bart.geojson in Resources */ = {isa = PBXBuildFile; fileRef = AABA53CE21D76B1C0097715E /* bart.geojson */; };
+		AABC859521F010D90042F864 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABC859421F010D90042F864 /* SettingsViewController.swift */; };
+		AABC859A21F017110042F864 /* LayerEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABC859921F017110042F864 /* LayerEnum.swift */; };
+		AAC77CE021D89B0F00EC548C /* BartLineOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC77CDF21D89B0F00EC548C /* BartLineOverlay.swift */; };
+		AAF5C39621EF0F6300876D0E /* BartData_model.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF5C39521EF0F6300876D0E /* BartData_model.swift */; };
 		AAF90F5A21D565D200540479 /* SearchResultsControllerObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF90F5921D565D200540479 /* SearchResultsControllerObject.swift */; };
 /* End PBXBuildFile section */
 
@@ -69,6 +74,11 @@
 		AA9C0DCB21A4EE4E001AC4D6 /* station_information.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = station_information.json; sourceTree = "<group>"; };
 		AA9C0DCD21A4F9FB001AC4D6 /* StationInformationRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationInformationRequest.swift; sourceTree = "<group>"; };
 		AA9C0DCF21A4FA48001AC4D6 /* StationStatusRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationStatusRequest.swift; sourceTree = "<group>"; };
+		AABA53CE21D76B1C0097715E /* bart.geojson */ = {isa = PBXFileReference; lastKnownFileType = text; path = bart.geojson; sourceTree = "<group>"; };
+		AABC859421F010D90042F864 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		AABC859921F017110042F864 /* LayerEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayerEnum.swift; sourceTree = "<group>"; };
+		AAC77CDF21D89B0F00EC548C /* BartLineOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BartLineOverlay.swift; sourceTree = "<group>"; };
+		AAF5C39521EF0F6300876D0E /* BartData_model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BartData_model.swift; sourceTree = "<group>"; };
 		AAF90F5921D565D200540479 /* SearchResultsControllerObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsControllerObject.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -112,11 +122,13 @@
 			isa = PBXGroup;
 			children = (
 				AA62D460219D39DB00F4931C /* ViewController.swift */,
-				AA5B00BE21D5B7EA00355128 /* ContentControllerObject.swift */,
-				AAF90F5921D565D200540479 /* SearchResultsControllerObject.swift */,
 				AA6A4B2021A4A08800C34319 /* MapModel.swift */,
+				AAF90F5921D565D200540479 /* SearchResultsControllerObject.swift */,
+				AA5B00BE21D5B7EA00355128 /* ContentControllerObject.swift */,
+				AABC859421F010D90042F864 /* SettingsViewController.swift */,
 				AA51BBE7219E9A9A004B482C /* BikeStationAnnotationView.swift */,
 				AA62D482219D3AEB00F4931C /* BikeStationAnnotation.swift */,
+				AAC77CDF21D89B0F00EC548C /* BartLineOverlay.swift */,
 				AA62D46D219D39DE00F4931C /* Info.plist */,
 				AA62D481219D3AD900F4931C /* DataModel */,
 				AA9C0DD121A4FC37001AC4D6 /* Utils */,
@@ -129,8 +141,11 @@
 			children = (
 				AA9C0DC921A4EE2D001AC4D6 /* station_status.json */,
 				AA9C0DCB21A4EE4E001AC4D6 /* station_information.json */,
+				AABA53CE21D76B1C0097715E /* bart.geojson */,
 				AA9C0DCF21A4FA48001AC4D6 /* StationStatusRequest.swift */,
 				AA9C0DCD21A4F9FB001AC4D6 /* StationInformationRequest.swift */,
+				AAF5C39521EF0F6300876D0E /* BartData_model.swift */,
+				AABC859921F017110042F864 /* LayerEnum.swift */,
 			);
 			path = DataModel;
 			sourceTree = "<group>";
@@ -235,6 +250,7 @@
 				AA62D469219D39DE00F4931C /* Assets.xcassets in Resources */,
 				AA5B00BB21D5AB7600355128 /* Images.xcassets in Resources */,
 				AA9C0DCC21A4EE4E001AC4D6 /* station_information.json in Resources */,
+				AABA53CF21D76B1C0097715E /* bart.geojson in Resources */,
 				AA62D464219D39DB00F4931C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -259,10 +275,14 @@
 				AA62D45F219D39DB00F4931C /* AppDelegate.swift in Sources */,
 				AA9C0DCE21A4F9FB001AC4D6 /* StationInformationRequest.swift in Sources */,
 				AA5B00BF21D5B7EA00355128 /* ContentControllerObject.swift in Sources */,
+				AAC77CE021D89B0F00EC548C /* BartLineOverlay.swift in Sources */,
+				AABC859521F010D90042F864 /* SettingsViewController.swift in Sources */,
 				AA6A4B1D21A4A06C00C34319 /* Colors.swift in Sources */,
 				AA62D467219D39DB00F4931C /* SAPFioriBikes.xcdatamodeld in Sources */,
 				AA62D483219D3AEB00F4931C /* BikeStationAnnotation.swift in Sources */,
+				AABC859A21F017110042F864 /* LayerEnum.swift in Sources */,
 				AA9C0DD021A4FA48001AC4D6 /* StationStatusRequest.swift in Sources */,
+				AAF5C39621EF0F6300876D0E /* BartData_model.swift in Sources */,
 				AA51BBE8219E9A9A004B482C /* BikeStationAnnotationView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

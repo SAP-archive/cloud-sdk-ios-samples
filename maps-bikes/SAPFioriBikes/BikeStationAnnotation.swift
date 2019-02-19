@@ -10,9 +10,11 @@ import SAPFiori
 
 class BikeStationAnnotation: NSObject, FUIAnnotation {
     
+    static var displayName = Layer.bikes
+    
     var state: FUIMapFloorplan.State  = .default
     
-    var layer: FUIGeometryLayer = FUIGeometryLayer(displayName: "default")
+    var layer: FUIGeometryLayer = FUIGeometryLayer(displayName: BikeStationAnnotation.displayName)
     
     var indexPath: IndexPath = IndexPath()
     

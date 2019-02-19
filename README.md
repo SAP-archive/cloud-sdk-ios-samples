@@ -12,4 +12,4 @@ Of course we also welcome suggestions and code improvements on our apps as well.
 You can find more tutorials etc. in our [SAP Community for SDK for iOS](https://developers.sap.com/topics/cloud-platform-sdk-for-ios.html).
 
 # License
-This project is licensed under the SAP Sample Code License except as noted otherwise in the [LICENSE](LICENSE) file.
+This project including all sample apps in the subfolders are licensed under the SAP Sample Code License except as noted otherwise in the [LICENSE](LICENSE) file.

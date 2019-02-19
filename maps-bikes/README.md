@@ -1,21 +1,17 @@
 # SAPFioriBikes
 
-This project showcases some of the [Map Floorplan](https://experience.sap.com/fiori-design-ios/article/map/) features of the 3.0 release of the [SAP Fiori iOS SDK](https://developer.apple.com/sap/).  Inspired by Apple's [TANDm](https://developer.apple.com/documentation/mapkit/mkannotationview/decluttering_a_map_with_mapkit_annotation_clustering) application from WWDC 2017 and the installation of [Ford GoBike](https://www.fordgobike.com/) across the bay area, `SAPFioriBikes` clusters bike stations and shows the number of bikes and eBikes at each location using the SAPFiori Map Floorplan implementation. With this application I hope I can finally track down one of the [Ford GoBike Plus](https://www.fordgobike.com/plus)!
+This project showcases some of the [Map Floorplan](https://experience.sap.com/fiori-design-ios/article/map/) features of the 3.1 release of the [SAP Fiori iOS SDK](https://developer.apple.com/sap/).  Inspired by Apple's [TANDm](https://developer.apple.com/documentation/mapkit/mkannotationview/decluttering_a_map_with_mapkit_annotation_clustering) application from WWDC 2017 and the installation of [Ford GoBike](https://www.fordgobike.com/) across the bay area, `SAPFioriBikes` clusters bike stations and shows the number of bikes and eBikes at each location using the SAPFiori Map Floorplan implementation. With this application I hope I can finally track down one of the [Ford GoBike Plus](https://www.fordgobike.com/plus)!
 
 ## SAPFioriBikes iPhone
 
-![SAPFioriBikes iPhone](./ReadMeImages/No_Legend_iPhone.png?raw=true)
-
-## SAPFioriBikes iPhone Legend
-
-![SAPFioriBikes iPhone Legend](./ReadMeImages/Show_Legend_iPhone.png?raw=true)
+![Detail Panel Search Results Bart](ReadMeImages/PanelWalkThrough.gif)
 
 ## SAPFioriBikes iPad
-![SAPFioriBikes iPad](./ReadMeImages/No_Legend_iPad.png?raw=true)
+![Detail Panel Search Results Bart](ReadMeImages/PanelWalkthroughiPad.gif)
 
-## SAPFioriBikes iPad Legend
+## SAPFioriBikes Editing Geospatial Objects
 
-![SAPFioriBikes iPad Legend](./ReadMeImages/Show_Legend_iPad.png?raw=true)
+![Complete Bike Path](ReadMeImages/EditingGeospatialObjects/Gifs/CompleteBikePathAdd.gif)
 
 ## Getting Started
 
@@ -25,15 +21,24 @@ This project showcases some of the [Map Floorplan](https://experience.sap.com/fi
 
 3. Add the `SAPFiori.framework` and `SAPCommon.framework` to the `Embedded Binaries` and `Linked Frameworks and Libraries`.
 
-4. Build and Run 🚴‍
+4. Install `StellarJay` using Carthage
 
-5. Read my walkthrough [blogpost](https://github.com/alextakahashi/SAPFioriBikes/blob/post1/SAPFioriBikesBlog.md)
+5. Build and Run 🚴‍
+
+6. Read my walkthrough
+      1. [FUIMapFloorplan: Getting Started](https://github.com/alextakahashi/SAPFioriBikes/blob/post4/SAPFioriBikesBlog.md)
+      2. [FUIMapFloorplan: DetailPanel](https://github.com/alextakahashi/SAPFioriBikes/blob/post4/SAPFioriBikesBlogDetailPanel.md)
+      3. [FUIMapFloorplan: Geospatial Objects](https://github.com/alextakahashi/SAPFioriBikes/blob/post4/SAPFioriBikesBlogGeospatialObjects.md)
+      4. [FUIMapFloorplan: Editing Geospatial Objects](https://github.com/alextakahashi/SAPFioriBikes/blob/post4/SAPFioriBikesBlogEditing.md)
+
+[//]: # (Needs external blog post link)
 
 ### Prerequisites
 
 * Xcode 10.0+
 * SAPFiori
 * SAPCommon
+* StellarJay
 
 ## API References
 

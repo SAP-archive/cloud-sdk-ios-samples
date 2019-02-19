@@ -13,4 +13,6 @@ enum Colors {
     static let darkBlue = UIColor(hexString: "002E6D")
     static let bartDefaultBlue = UIColor(hexString: "009bda")
     static let bartBlue = UIColor(hexString: "00aeef")
+    static let stravaOrange = UIColor(hexString: "fc4c02")
+    static let slowZoneYellow = UIColor(hexString: "ffbf00")
 }

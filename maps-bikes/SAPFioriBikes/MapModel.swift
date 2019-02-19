@@ -28,17 +28,19 @@ class FioriBikeMapModel {
     
     var layerModel: [FUIGeometryLayer] = [
         FUIGeometryLayer(displayName: Layer.bikes),
-        FUIGeometryLayer(displayName: Layer.bart)
+        FUIGeometryLayer(displayName: Layer.bart),
+        FUIGeometryLayer(displayName: Layer.custom)
     ]
     
     var layerIsEnabled: [Bool] {
         get {
-            return [stationIsEnabled, bartLineIsEnabled]
+            return [stationIsEnabled, bartLineIsEnabled, editingLayerIsEnabled]
         }
         set {
             guard newValue.count == layerModel.count else { preconditionFailure() }
             stationIsEnabled = newValue[0]
             bartLineIsEnabled = newValue[1]
+            editingLayerIsEnabled = newValue[2]
             self.delegate?.reloadData()
         }
     }
@@ -64,6 +66,18 @@ class FioriBikeMapModel {
             return _bartLineMode
         }
     }
+    
+    public var editingLayerIsEnabled: Bool = true
+    
+    public var _editingModel: [FUIAnnotation] = []
+    
+    public var editingModel: [FUIAnnotation] {
+        get {
+            guard editingLayerIsEnabled else { return [] }
+            return _editingModel
+        }
+    }
+    
     
     func loadData(isLiveData: Bool = false) {
         isLiveData ? loadLiveData() : loadLocalData()
@@ -115,6 +129,44 @@ class FioriBikeMapModel {
             return emptyStation
         }()
         return [bikeLegendItem, eBikeLegendItem, stationItem, emptyStationItem]
+    }()
+    
+    // MARK: Editing Buisiness Objects
+    
+    let editingItemsModel: [FUIMapLegendItem] = {
+        let walkZoneItem: FUIMapLegendItem = {
+            var item = FUIMapLegendItem(title: Layer.Editing.walkZone)
+            let image = FUIAttributedImage(image: FUIIconLibrary.map.marker.walk.withRenderingMode(.alwaysTemplate))
+            image.tintColor = .white
+            item.icon = FUIMapLegendIcon(glyphImage: image)
+            item.backgroundColor = Colors.red
+            return item
+        }()
+        
+        let bikePathItem: FUIMapLegendItem = {
+            var item = FUIMapLegendItem(title: Layer.Editing.bikePath)
+            guard let bicycleImage = UIImage(named: "bicycle") else { return item }
+            let image = FUIAttributedImage(image: bicycleImage.withRenderingMode(.alwaysTemplate))
+            image.tintColor = .white
+            item.icon = FUIMapLegendIcon(glyphImage: image)
+            item.backgroundColor = Colors.red
+            return item
+        }()
+        
+        let breweryItem: FUIMapLegendItem = {
+            var item = FUIMapLegendItem(title: Layer.Editing.brewery)
+            item.icon = FUIMapLegendIcon(glyphImage: "🍻")
+            return item
+        }()
+        
+        let venueItem: FUIMapLegendItem = {
+            var item = FUIMapLegendItem(title: Layer.Editing.venue)
+            let image = FUIAttributedImage(image: FUIIconLibrary.map.marker.venue.withRenderingMode(.alwaysTemplate))
+            image.tintColor = .white
+            item.icon = FUIMapLegendIcon(glyphImage: image)
+            return item
+        }()
+        return [walkZoneItem, bikePathItem, breweryItem, venueItem]
     }()
     
     // MARK: Private Functions

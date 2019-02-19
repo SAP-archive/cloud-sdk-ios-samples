@@ -15,15 +15,16 @@ This repository hosts an iOS application AAACardScanApp built using SAP Cloud Pl
 
 ### Prerequisites
 
-* Xcode 10.0+
-* SAPFiori
-* SAPCommon
-* SAPML
-* SAPML-Dependencies
-  * GoogleMobileVision.framework
-  * GoogleToolboxForMac.framework
-  * GTMSessionFetcherIOS.framework
-  * Protobuf.framework
+* Xcode 10.1+
+* SAP Cloud Platform SDK for iOS 3.0 SP01+
+  * SAPFiori
+  * SAPCommon
+  * SAPML
+  * SAPML-Dependencies
+    * GoogleMobileVision.framework
+    * GoogleToolboxForMac.framework
+    * GTMSessionFetcherIOS.framework
+    * Protobuf.framework
 
 ## API References
 

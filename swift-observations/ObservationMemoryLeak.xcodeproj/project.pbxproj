@@ -151,7 +151,7 @@
 			attributes = {
 				LastSwiftUpdateCheck = 1010;
 				LastUpgradeCheck = 1010;
-				ORGANIZATIONNAME = "Takahashi, Alex";
+				ORGANIZATIONNAME = "";
 				TargetAttributes = {
 					AA4310BC21C8833B0071BFD5 = {
 						CreatedOnToolsVersion = 10.1;

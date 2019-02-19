@@ -7,7 +7,8 @@ This repository hosts an iOS application AAACardScanApp built using SAP Cloud Pl
 
 2. Clone the repository.
 
-3. Add the `SAPFiori.framework`, `SAPCommon.framework`, `SAPML.framework`, and SAPML-Dependencies `GoogleMobileVision.framework`, `GoogleToolboxForMac.framework`, `GTMSessionFetcherIOS.framework`, and `Protobuf.framework` to the `Embedded Binaries` and `Linked Frameworks and Libraries`.
+3. Add the `SAPFiori.framework`, `SAPCommon.framework`, `SAPML.framework`, and SAPML-Dependencies `GoogleToolboxForMac.framework`, `GTMSessionFetcherIOS.framework`, and `Protobuf.framework` to the `Embedded Binaries` and `Linked Frameworks and Libraries`. 
+Make sure that `GoogleMobileVision.framework` is *not* added.
 
 4. Build and Run 📸
 

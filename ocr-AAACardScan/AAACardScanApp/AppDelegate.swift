@@ -1,10 +1,9 @@
 //
 //  AppDelegate.swift
-//  AAACardScanApp
 //
-//  Created by Ketkale, Sourabh Raosaheb on 2/11/19.
-//  Copyright © 2019 Ketkale, Sourabh Raosaheb. All rights reserved.
+//  Copyright © 2019 SAP SE or an SAP affiliate company. All rights reserved.
 //
+
 
 import UIKit
 

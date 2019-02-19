@@ -1,9 +1,7 @@
 //
 //  ObservingView.swift
-//  ObservationMemoryLeak
 //
-//  Created by Takahashi, Alex on 12/17/18.
-//  Copyright © 2018 Takahashi, Alex. All rights reserved.
+//  Copyright © 2019 SAP SE or an SAP affiliate company. All rights reserved.
 //
 
 import Foundation

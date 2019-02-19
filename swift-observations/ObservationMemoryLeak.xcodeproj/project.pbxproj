@@ -13,7 +13,6 @@
 		AA4310C921C8833B0071BFD5 /* ObservationMemoryLeak.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AA4310C721C8833B0071BFD5 /* ObservationMemoryLeak.xcdatamodeld */; };
 		AA4310CB21C8833C0071BFD5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA4310CA21C8833C0071BFD5 /* Assets.xcassets */; };
 		AA4310CE21C8833C0071BFD5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA4310CC21C8833C0071BFD5 /* LaunchScreen.storyboard */; };
-		AA4310D921C8833C0071BFD5 /* ObservationMemoryLeakTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4310D821C8833C0071BFD5 /* ObservationMemoryLeakTests.swift */; };
 		AA9B0F5E21C88FE100D4041D /* ObservingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9B0F5D21C88FE100D4041D /* ObservingView.swift */; };
 		AA9B0F6021C8901200D4041D /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9B0F5F21C8901200D4041D /* TableViewController.swift */; };
 /* End PBXBuildFile section */
@@ -38,8 +37,6 @@
 		AA4310CD21C8833C0071BFD5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AA4310CF21C8833C0071BFD5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AA4310D421C8833C0071BFD5 /* ObservationMemoryLeakTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ObservationMemoryLeakTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		AA4310D821C8833C0071BFD5 /* ObservationMemoryLeakTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservationMemoryLeakTests.swift; sourceTree = "<group>"; };
-		AA4310DA21C8833C0071BFD5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AA9B0F5D21C88FE100D4041D /* ObservingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservingView.swift; sourceTree = "<group>"; };
 		AA9B0F5F21C8901200D4041D /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -66,7 +63,6 @@
 			isa = PBXGroup;
 			children = (
 				AA4310BF21C8833B0071BFD5 /* ObservationMemoryLeak */,
-				AA4310D721C8833C0071BFD5 /* ObservationMemoryLeakTests */,
 				AA4310BE21C8833B0071BFD5 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -94,15 +90,6 @@
 				AA4310C021C8833B0071BFD5 /* AppDelegate.swift */,
 			);
 			path = ObservationMemoryLeak;
-			sourceTree = "<group>";
-		};
-		AA4310D721C8833C0071BFD5 /* ObservationMemoryLeakTests */ = {
-			isa = PBXGroup;
-			children = (
-				AA4310D821C8833C0071BFD5 /* ObservationMemoryLeakTests.swift */,
-				AA4310DA21C8833C0071BFD5 /* Info.plist */,
-			);
-			path = ObservationMemoryLeakTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -218,7 +205,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AA4310D921C8833C0071BFD5 /* ObservationMemoryLeakTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

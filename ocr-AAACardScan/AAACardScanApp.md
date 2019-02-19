@@ -28,7 +28,7 @@ The `FUITextRecognitionView` performs text recognition using the device camera. 
 ![This is what we would achieve at the end of this blog](./AAACardScanAppImages/AAACardScanDemo.gif?raw=true)
 
 # Implementation
-Please refer to `AAACardScan.swift` in this [code repository](https://github.wdf.sap.corp/I859974/AAACardScanApp) to follow along.
+Please refer to `AAACardScan.swift` in this code repository to follow along.
 
 1. Declaring a `FUITextRecognitionView()` view:
   ```swift

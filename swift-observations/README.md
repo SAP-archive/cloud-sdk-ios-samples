@@ -26,7 +26,7 @@ observation = self.layer.observe(\.bounds) { (observed, _) in
 
 1. Clone the repository
 2. Build and Run 🚰
-3. Read my walkthrough [blogpost](https://github.wdf.sap.corp/i860364/ObservationMemoryLeak/blob/master/Blogpost.md)
+3. Read my walkthrough [blogpost](Blogpost.md)
 
 ### Prerequisites
 

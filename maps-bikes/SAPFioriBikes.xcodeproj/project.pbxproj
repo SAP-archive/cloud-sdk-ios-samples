@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		AA51BBE8219E9A9A004B482C /* BikeStationAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA51BBE7219E9A9A004B482C /* BikeStationAnnotationView.swift */; };
+		AA5B00BB21D5AB7600355128 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA5B00BA21D5AB7600355128 /* Images.xcassets */; };
+		AA5B00BF21D5B7EA00355128 /* ContentControllerObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5B00BE21D5B7EA00355128 /* ContentControllerObject.swift */; };
 		AA62D45F219D39DB00F4931C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA62D45E219D39DB00F4931C /* AppDelegate.swift */; };
 		AA62D461219D39DB00F4931C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA62D460219D39DB00F4931C /* ViewController.swift */; };
 		AA62D464219D39DB00F4931C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA62D462219D39DB00F4931C /* Main.storyboard */; };
@@ -21,6 +23,7 @@
 		AA9C0DCC21A4EE4E001AC4D6 /* station_information.json in Resources */ = {isa = PBXBuildFile; fileRef = AA9C0DCB21A4EE4E001AC4D6 /* station_information.json */; };
 		AA9C0DCE21A4F9FB001AC4D6 /* StationInformationRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9C0DCD21A4F9FB001AC4D6 /* StationInformationRequest.swift */; };
 		AA9C0DD021A4FA48001AC4D6 /* StationStatusRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9C0DCF21A4FA48001AC4D6 /* StationStatusRequest.swift */; };
+		AAF90F5A21D565D200540479 /* SearchResultsControllerObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF90F5921D565D200540479 /* SearchResultsControllerObject.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +51,8 @@
 
 /* Begin PBXFileReference section */
 		AA51BBE7219E9A9A004B482C /* BikeStationAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BikeStationAnnotationView.swift; sourceTree = "<group>"; };
+		AA5B00BA21D5AB7600355128 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		AA5B00BE21D5B7EA00355128 /* ContentControllerObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentControllerObject.swift; sourceTree = "<group>"; };
 		AA62D45B219D39DB00F4931C /* SAPFioriBikes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SAPFioriBikes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA62D45E219D39DB00F4931C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AA62D460219D39DB00F4931C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -64,6 +69,7 @@
 		AA9C0DCB21A4EE4E001AC4D6 /* station_information.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = station_information.json; sourceTree = "<group>"; };
 		AA9C0DCD21A4F9FB001AC4D6 /* StationInformationRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationInformationRequest.swift; sourceTree = "<group>"; };
 		AA9C0DCF21A4FA48001AC4D6 /* StationStatusRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationStatusRequest.swift; sourceTree = "<group>"; };
+		AAF90F5921D565D200540479 /* SearchResultsControllerObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsControllerObject.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +93,7 @@
 		AA62D452219D39DB00F4931C = {
 			isa = PBXGroup;
 			children = (
+				AA5B00BA21D5AB7600355128 /* Images.xcassets */,
 				AA62D45D219D39DB00F4931C /* SAPFioriBikes */,
 				AA62D45C219D39DB00F4931C /* Products */,
 			);
@@ -105,6 +112,8 @@
 			isa = PBXGroup;
 			children = (
 				AA62D460219D39DB00F4931C /* ViewController.swift */,
+				AA5B00BE21D5B7EA00355128 /* ContentControllerObject.swift */,
+				AAF90F5921D565D200540479 /* SearchResultsControllerObject.swift */,
 				AA6A4B2021A4A08800C34319 /* MapModel.swift */,
 				AA51BBE7219E9A9A004B482C /* BikeStationAnnotationView.swift */,
 				AA62D482219D3AEB00F4931C /* BikeStationAnnotation.swift */,
@@ -224,6 +233,7 @@
 				AA9C0DCA21A4EE2D001AC4D6 /* station_status.json in Resources */,
 				AA62D46C219D39DE00F4931C /* LaunchScreen.storyboard in Resources */,
 				AA62D469219D39DE00F4931C /* Assets.xcassets in Resources */,
+				AA5B00BB21D5AB7600355128 /* Images.xcassets in Resources */,
 				AA9C0DCC21A4EE4E001AC4D6 /* station_information.json in Resources */,
 				AA62D464219D39DB00F4931C /* Main.storyboard in Resources */,
 			);
@@ -245,8 +255,10 @@
 			files = (
 				AA6A4B2121A4A08900C34319 /* MapModel.swift in Sources */,
 				AA62D461219D39DB00F4931C /* ViewController.swift in Sources */,
+				AAF90F5A21D565D200540479 /* SearchResultsControllerObject.swift in Sources */,
 				AA62D45F219D39DB00F4931C /* AppDelegate.swift in Sources */,
 				AA9C0DCE21A4F9FB001AC4D6 /* StationInformationRequest.swift in Sources */,
+				AA5B00BF21D5B7EA00355128 /* ContentControllerObject.swift in Sources */,
 				AA6A4B1D21A4A06C00C34319 /* Colors.swift in Sources */,
 				AA62D467219D39DB00F4931C /* SAPFioriBikes.xcdatamodeld in Sources */,
 				AA62D483219D3AEB00F4931C /* BikeStationAnnotation.swift in Sources */,

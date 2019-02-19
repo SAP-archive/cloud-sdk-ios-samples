@@ -33,6 +33,16 @@ class FioriBikeMapModel {
         isLiveData ? loadLiveData() : loadLocalData()
     }
     
+    var userLocation: CLLocation? {
+        didSet {
+            guard let userLocation = userLocation else { return }
+            for station in stationModel {
+                station.distanceToUser = userLocation.distance(from: station.coordinate)
+            }
+            stationModel.sort(by: { return Double($0.distanceToUser!) < Double($1.distanceToUser!) })
+        }
+    }
+    
     // MARK: FUIMapLegend Buisiness Objects
     
     var legendTitle: String {
@@ -160,4 +170,12 @@ class FioriBikeMapModel {
             stationObject.information = information
         }
     }
+}
+
+fileprivate extension CLLocation {
+
+    func distance(from location: CLLocationCoordinate2D) -> CLLocationDistance {
+        return self.distance(from: CLLocation(latitude: location.latitude, longitude: location.longitude))
+    }
+    
 }

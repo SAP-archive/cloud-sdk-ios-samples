@@ -1,0 +1,5 @@
+build/
+SAPFioriBikes.xcodeproj/xcuserdata/
+SAPFioriBikes.xcodeproj/project.xcworkspace/
+Cartfile.resolved
+Carthage/

@@ -13,6 +13,7 @@ Each sample app sits in a separate folder of this repository and is fully self-c
 Any iOS development requires using a Mac and the development tools from Apple.
 You need to have the current version of [Xcode](https://developer.apple.com/xcode/) installed.
 
+# Download and Installation
 All apps depend on the SAP Cloud Platform SDK for iOS frameworks that can be downloaded from the [SAP Community](https://www.sap.com/developer/trials-downloads/additional-downloads/sap-cloud-platform-sdk-for-ios-14485.html).
 
 Some apps may require further configuration steps and have more dependencies that are listed in the respective readme files of each app.
@@ -23,7 +24,7 @@ Of course we also welcome PRs with suggestions and code improvements on our apps
 
 You can find more tutorials etc. in our [SAP Community for SDK for iOS](https://developers.sap.com/topics/cloud-platform-sdk-for-ios.html).
 
-# Publishing Guidelines
+# Contributing
 We're happy to publish sample projects that illustrate one or more capabilities of the SDK for iOS. 
 Most of these projects would stem from testing and development and might have some legacy before showing up here.
 Please make sure to apply some basic hygiene before publishing them:

@@ -16,6 +16,18 @@ You need to have the current version of [Xcode](https://developer.apple.com/xcod
 # Download and Installation
 All apps depend on the SAP Cloud Platform SDK for iOS frameworks that can be downloaded from the [SAP Community](https://www.sap.com/developer/trials-downloads/additional-downloads/sap-cloud-platform-sdk-for-ios-14485.html).
 
+1. Open the Assistant and export the frameworks to your disk
+
+![Export Menu](README-images/SDK-install-export-frameworks.png)
+
+2. You have this structure now. Use the 'fat' frameworks for local testing on device and simulator.
+
+![SDK Folder](README-images/SDK-install-folderstructure.png)
+
+3. Open the Xcode build settings of the sample app project and add the required frameworks using the '+' button.
+
+![Build Settings](README-images/SDK-install-add-frameworks.png)
+
 Some apps may require further configuration steps and have more dependencies that are listed in the respective readme files of each app.
 
 # How to obtain support

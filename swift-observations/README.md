@@ -21,21 +21,28 @@ observation = self.layer.observe(\.bounds) { (observed, _) in
     print("✅ Safe Observation")
 }
 ```
+# Requirements
 
-## Getting Started
+* Xcode 10.1+
+
+# Configuration
+
+No specific steps required.
 
 1. Clone the repository
 2. Build and Run 🚰
 3. Read my walkthrough [blogpost](Blogpost.md)
 
-### Prerequisites
-
-* Xcode 10.1+
-
-## Authors
+# Authors
 
 * **Alex Takahashi** - *Initial work* - [alexTakahashi](https://github.com/alextakahashi)
 
-## Acknowledgments
+# Acknowledgments
 
 * [README-Template](https://gist.github.com/PurpleBooth/109311bb0361f32d87a2)
+
+# License
+Copyright (c) 2019 SAP SE or an SAP affiliate company. 
+All rights reserved.
+
+This project is licensed under the SAP Sample Code License except as noted otherwise in the [LICENSE](../LICENSE) file.

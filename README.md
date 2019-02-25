@@ -24,7 +24,8 @@ All apps depend on the SAP Cloud Platform SDK for iOS frameworks that can be dow
 
 ![SDK Folder](README-images/SDK-install-folderstructure.png)
 
-3. Open the Xcode build settings of the sample app project and add the required frameworks using the '+' button.
+# Configuration
+Open the Xcode build settings of the sample app project and add the required frameworks using the '+' button.
 
 ![Build Settings](README-images/SDK-install-add-frameworks.png)
 

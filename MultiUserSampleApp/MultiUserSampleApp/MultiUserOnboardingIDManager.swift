@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import SAPCommon
 import SAPFoundation
 import SAPFioriFlows
 
@@ -28,6 +29,7 @@ public class MultiUserOnboardingIDManager: OnboardingIDManaging {
     
     // prefix of the keys used to store the onboardingID in the UserDefaults
     let OnboardedUserKeyPrefix = "Onboarded_"
+    
     // PlistCoder to ease the code/decode of User types
     let coder = SAPFoundation.PlistCoder()
     
@@ -45,14 +47,14 @@ public class MultiUserOnboardingIDManager: OnboardingIDManaging {
             let onboardingIDString = key.dropFirst(OnboardedUserKeyPrefix.count)
             do {
                 guard let onboardingID = UUID(uuidString: String(onboardingIDString)) else {
-                    // TODO: error handling, currently just skip
+                    Logger.root.error("Failed to create UUID for key: \(onboardingIDString)")
                     continue
                 }
                 let user = try self.user(for: onboardingID)
                 users.append(user)
             }
             catch {
-                // TODO: error handling
+                Logger.root.error("Failed to load User for key: \(onboardingIDString)", error: error)
             }
         }
         
@@ -133,5 +135,6 @@ extension MultiUserOnboardingIDManager {
     public func remove(onboardingID: UUID, completionHandler: () -> Void) {
         self.selectedUserName = nil
         self.removeOnboardedUser(onboardingID)
+        completionHandler()
     }
 }

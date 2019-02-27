@@ -147,6 +147,11 @@ extension AppDelegate {
             self.afterOnboard()
         }
     }
+    
+    func switchUser() {
+        self.sessionManager.close()
+        self.onboardUser()
+    }
 }
 
 // MARK: - ConnectivityObserver implementation

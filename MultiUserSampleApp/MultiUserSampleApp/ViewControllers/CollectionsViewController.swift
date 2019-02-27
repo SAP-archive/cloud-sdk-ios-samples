@@ -18,6 +18,7 @@ protocol EntitySetUpdaterDelegate {
 }
 
 class CollectionsViewController: FUIFormTableViewController {
+    
     private var collections = CollectionType.all
 
     // Variable to store the selected index path
@@ -56,6 +57,13 @@ class CollectionsViewController: FUIFormTableViewController {
             self.makeSelection()
         })
     }
+    
+    // Event handling
+    @IBAction func logoutTouched(_ sender: Any) {
+        AppDelegate.shared.switchUser()
+    }
+    
+    
 
     // MARK: - UITableViewDelegate
 

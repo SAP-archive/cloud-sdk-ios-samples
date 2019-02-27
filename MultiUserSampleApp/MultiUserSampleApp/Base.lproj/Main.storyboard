@@ -30,10 +30,10 @@
             </objects>
             <point key="canvasLocation" x="-23" y="-45"/>
         </scene>
-        <!--Title-->
+        <!--Select User-->
         <scene sceneID="IGV-6D-DZX">
             <objects>
-                <tableViewController storyboardIdentifier="SelectUserViewController" id="L7N-Q8-fZa" customClass="SelectUserViewController" customModule="MultiUserSampleApp" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="SelectUserViewController" id="L7N-Q8-fZa" userLabel="Select User" customClass="SelectUserViewController" customModule="MultiUserSampleApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="fC3-K2-X1E">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -71,7 +71,7 @@
                         </connections>
                     </tableView>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Title" id="P40-Mk-2ua">
+                    <navigationItem key="navigationItem" title="Select User" id="P40-Mk-2ua">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="O3b-QD-ofI">
                             <connections>
                                 <action selector="addUser:" destination="L7N-Q8-fZa" id="vDH-sJ-zPJ"/>
@@ -141,6 +141,11 @@
                     </tableView>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Collections" id="PEH-PR-IZU">
+                        <barButtonItem key="leftBarButtonItem" systemItem="pause" id="zGi-YV-6vE">
+                            <connections>
+                                <action selector="logoutTouched:" destination="Hg4-SY-Mln" id="Jyv-tB-gnf"/>
+                            </connections>
+                        </barButtonItem>
                         <attributedString key="userComments">
                             <fragment content="XTIT: Title of Collections screen.">
                                 <attributes>

@@ -36,12 +36,63 @@ class SelectUserViewController: UITableViewController {
     
     /// Called when the user select to start a new onboarding
     @IBAction func addUser(_ sender: Any) {
+        showAlertForUser()
+    }
+
+    func showAlertForUser() {
         guard let completion = flowSelectionCompletion else {
             return
         }
-        completion("username", .onboard)
-    }
+        
+        let addUserController = UIAlertController(title: "Add user", message: "Create a new onboarding. Specify your name", preferredStyle: .alert)
+        let saveAction = UIAlertAction(title: "Save", style: .default) { action in
+            guard let textField = addUserController.textFields?.first, let userName = textField.text?.trimmingCharacters(in: .whitespacesAndNewlines), !userName.isEmpty else {
+                // restart if something went wrong
+                DispatchQueue.main.async {
+                    self.showAlertForUser()
+                }
+                return
+            }
 
+            // do not allow to create an existing user
+            guard !self.users.contains(where: { return $0.name.lowercased() == userName.lowercased() }) else {
+                let errorController = UIAlertController(title: "Error", message: "User already exists", preferredStyle: .alert)
+                errorController.addAction(UIAlertAction(title: "Ok", style: .default, handler: { _ in self.showAlertForUser() }))
+                self.present(errorController, animated: true)
+                return
+            }
+            
+            completion(userName, .onboard)
+        }
+        saveAction.isEnabled = false
+        addUserController.addTextField { textField in
+            textField.addTarget(self, action: #selector(self.textFieldDidChange(_:)), for: .editingChanged)
+        }
+        addUserController.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        addUserController.addAction(saveAction)
+        self.present(addUserController, animated: true)
+    }
+    
+    @objc func textFieldDidChange(_ textField: UITextField) {
+        // find the UIAlertController
+        var current: UIResponder? = textField
+        while current != nil && !(current is UIAlertController) {
+            current = current?.next
+        }
+        
+        // find the action
+        guard let alertController = current as? UIAlertController, let saveAction = alertController.actions.first(where: { $0.style != .cancel }) else {
+            return
+        }
+        // enabled or disable the saveButton based on the text provided by the user
+        if let userName = textField.text?.trimmingCharacters(in: .whitespacesAndNewlines), !userName.isEmpty, !self.users.contains(where: { return $0.name.lowercased() == userName.lowercased() }) {
+            saveAction.isEnabled = true
+        }
+        else {
+            saveAction.isEnabled = false
+        }
+    }
+    
     // MARK: - Table view data source
 
 //    override func numberOfSections(in tableView: UITableView) -> Int {
@@ -57,7 +108,7 @@ class SelectUserViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: UserTableViewCell.cellID) as! UserTableViewCell
-        cell.userName.text = "\(users[indexPath.row])"
+        cell.userName.text = "\(users[indexPath.row].name)"
         return cell
     }
     

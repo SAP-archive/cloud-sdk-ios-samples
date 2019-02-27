@@ -13,49 +13,92 @@ Check out these tutorials and courses for deep-dives into various areas
 ## TechEd
 Watch SAP TechEd sessions on mobility online at [SAP Teched Online](http://www.sapteched.com/online).
 
+----
 
 #  Steps to support multiple users in an app
-
-## Prerequisits
-1. existing SAP  account to access Cloud Platform mobile services
-1. The latest version of the Assistant application
 
 ## Overview
 To support multi-user scenarios you should  replace the default `SingleUserOnboardingIDManager` to your custom implementation in the `OnboardingController`. This class must implement the OnboardingIDManaging protocol and is responsible to store the `onboardingIDs` as well to decide to create a new onboarding session or restore an existing one using the `onboardingID`. It is up to your application design how you support these options.
 In this sample a view controller will be presented to the users where the user can select one from the existing sessions or create a new one.
 
+## Prerequisits
+1. existing SAP  account to access Cloud Platform mobile services
+1. The latest version of the Assistant application
+
 ## Steps
-  
-1. Create a new Swift class named `MultiUserOnboardingIDManager` and implement the `OnboardingIDManaging` protocol with a simple implementation first: stores the id, returns with `.onboard` when it is asked in `flowToStart`... To make it more realistic we introduce a `User` type which contains a `name` and the `onboardingID`. This will be managed by the `MultiUserOnboardingIDManager`. It worth to create some private helper methods to store, retrieve the `Users`. This way we the users can see user names instead of `onboardingIDs`
-1. Create a new `UITableViewController` descendant Swift class and name it `SelectUserViewController`. This will present the list of existing onboarding sessions.
-    1. Create a small new class for the presented UITableViewCells used by SelectUserViewController. Name it `UserTableViewCell`.
-        1. The cell should have a UILabel as an IBOutlet.
-        1. create a const cellID: will be used to get the cell, must be set in the storyboard as well
-            ```
-            static let cellID = "UserSelectorCell"
-            ```
-    1. Declare two properties:
-        1. flowSelectionCompletion: the completion handler to call when the user selected the action
-        1. users: array of `User`s; set by the `MultiUserOnboardingIDManager` with the available users and used by the tableview to present the items
-    1. Create new IBAction for the add user option: addUser
-    1. Remove the `numberOfSections` method as we only have one section
-    1. In the `tableView(_ tableView: UITableView, numberOfRowsInSection section: Int)` just return with the users.count
-    1. uncomment the `cellForRowAt: indexPath` method and dequeue the cell with the id. Fill the cell with the user name blonging to that line/indexPath
+
+### Create a new onboardingID manager
+
+Create a new Swift class named `MultiUserOnboardingIDManager` and implement the `OnboardingIDManaging` protocol with a simple implementation first: stores the id, returns with `.onboard` when it is asked in `flowToStart`... To make it more realistic we introduce a `User` type which contains a `name` and the `onboardingID`. This will be managed by the `MultiUserOnboardingIDManager`. It worth to create some private helper methods to store, retrieve the `Users`. This way the users can see user names instead of `onboardingIDs` and the type can be exteneded later on demand.
+
+### Create the UI to interact with the user
+
+#### Create a `UITableViewController`
+
+Create a new `UITableViewController` descendant Swift class and name it `SelectUserViewController`. This will present the list of existing onboarding sessions.
+
+1. Create a small new class for the presented UITableViewCells used by SelectUserViewController. Name it `UserTableViewCell`.
+    1. The cell should have a UILabel as an IBOutlet.
+    1. create a const cellID: will be used to get the cell, must be set in the storyboard as well
         ```
-        cell.userName.text = "\(users[indexPath.row].name)"
+        static let cellID = "UserSelectorCell"
         ```
-    1. implement the `didSelectRowAt indexPath` method to handle the user selection of items. Just call back on the flowCompletionHandler with the username and onboardingID  
-    1. remove any other unnecessary commented code snippet from the file
-1. Create the UI in the storyboard for the SelectUserViewController. Open the Main.storyboard
-    1. Drop in a new UITablewViewController scene
-    1. Set the class of the view controller to `SelectUserViewController`
-    1. Set the `Storyboard ID` to 'SelectUserViewController'
-    1. Select the prototype cell and set its class to `UserTableViewCell`
-    1. Set the `identifier` of the prototype cell to 'UserSelectorCell'
-    
-    
+1. Declare two properties:
+    1. flowSelectionCompletion: the completion handler to call when the user selected the action
+    1. users: array of `User`s; set by the `MultiUserOnboardingIDManager` with the available users and used by the tableview to present the items
+1. Create new IBAction for the add user option: addUser
+1. Remove the `numberOfSections` method as we only have one section
+1. In the `tableView(_ tableView: UITableView, numberOfRowsInSection section: Int)` just return with the users.count
+1. uncomment the `cellForRowAt: indexPath` method and dequeue the cell with the id. Fill the cell with the user name blonging to that line/indexPath
+    ```
+    cell.userName.text = "\(users[indexPath.row].name)"
+    ```
+1. implement the `didSelectRowAt indexPath` method to handle the user selection of items. Just call back on the flowCompletionHandler with the username and onboardingID  
+1. remove any other unnecessary commented code snippet from the file
 
+#### Create the UI in storyboard for the SelectUserViewController
+Open the Main.storyboard
+1. Drop in a new UITablewViewController scene
+1. Set the class of the view controller to `SelectUserViewController`
+1. Set the `Storyboard ID` to 'SelectUserViewController'
+1. Select the prototype cell and set its class to `UserTableViewCell`
+1. Add a UILabel to the cell and bind it to the userName outlet. Don't forget to set up the autolayout constraints properly
+1. Set the `identifier` of the prototype cell to 'UserSelectorCell'
+1. drop a `NavigationItem` to the view controller
+1. drop a `UIBarButtonItem` to the right-top, set its `System Item` to `Add` in the 'Attributes Inspector'
+1. Bind the action of this button to the `addUser` IBAction
 
+### Bind together the pieces to make it work
 
+Finalize `MultiUserOnboardingIDManager`. When `flowToStart` called we present the UI where the user can select to start a new onboarding session or restore and existing one. So in `flowToStart`
 
+1. get a reference to the main storyboard and load the `SelectUserViewController` from it
+1. set the `flowSelectionCompletion`; in the closure save the selected user name and dismiss the view controller, then call the `completionHandler` of the `flowToSelect`.
+1. Create a new property where we can save the user name. When onboarding finished and the onboardingID mus tbe persisted we can attach the name to the ID creating a `User` and save it to the UseDefaults
+    ```swift
+    var selectedUserName: String?
+    ```
+    When the other delegate methods are called make sure to nil out the property!
+1. set the available users on `SelectUserViewController`
+    ```
+    selectUserViewController.users = self.allUsers()
+    ```
+1. present the view controller in a NavigationController to be able to present the buttons in the Navigation Bar. Make sure you call it on the main queue
+    ```
+    DispatchQueue.main.async {
+        topViewController.present(navCtrl, animated: true)
+    }
+    ```
+1. Bind the `OnboardingController` to the `MultiUserOnboardingIDManager`. By default the `OnboardingController` is created inside a convenience init of `OnboardingSessionManager` so we will modify that call
+In your `AppDelegate` find the `initializeOnboarding` method  (it is implemented as an extension on AppDelegate) and modify the line initialization of `OnboardingSessionManager` by adding the parameter to the initializer (after the `flowProvider` parameter) `, onboardingIDManager: MultiUserOnboardingIDManager()`
 
+    Before:
+    ```swift
+    self.sessionManager = OnboardingSessionManager(presentationDelegate: presentationDelegate, flowProvider: self.flowProvider, delegate: self.onboardingErrorHandler)
+    ```
+    After:
+    ```swift
+    self.sessionManager = OnboardingSessionManager(presentationDelegate: presentationDelegate, flowProvider: self.flowProvider, onboardingIDManager: MultiUserOnboardingIDManager(), delegate: self.onboardingErrorHandler)
+    ```
+
+Try out what we have! When the app starts instead of starting with the standard 'Welcome screen' it presents an empty list - this will contain the onboarding sessions. Press the '+' button on the top left corner to initiate a new onboard.

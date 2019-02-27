@@ -101,7 +101,7 @@ extension AppDelegate {
     func initializeOnboarding() {
         let presentationDelegate = ApplicationUIManager(window: self.window!)
         self.onboardingErrorHandler = OnboardingErrorHandler()
-        self.sessionManager = OnboardingSessionManager(presentationDelegate: presentationDelegate, flowProvider: self.flowProvider, delegate: self.onboardingErrorHandler)
+        self.sessionManager = OnboardingSessionManager(presentationDelegate: presentationDelegate, flowProvider: self.flowProvider, onboardingIDManager: MultiUserOnboardingIDManager(), delegate: self.onboardingErrorHandler)
         presentationDelegate.showSplashScreenForOnboarding { _ in }
 
         self.onboardUser()

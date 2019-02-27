@@ -15,6 +15,7 @@
 		0EA4D2DECB75236FDEFF788A /* CellCreationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E902A13BED8B018D252DAF /* CellCreationHelper.swift */; };
 		1277F7611F8E66AF0060AF58 /* SAPLogo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1277F7601F8E66AC0060AF58 /* SAPLogo@2x.png */; };
 		234B8AE7FFE9D4202488C249 /* CollectionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E77D1F69B98F3AB5376FEC0 /* CollectionsViewController.swift */; };
+		26E5F5AE221C12A6005FBDDD /* MultiUserOnboardingIDManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E5F5AD221C12A6005FBDDD /* MultiUserOnboardingIDManager.swift */; };
 		2B5CA8A945A6330818B6D383 /* DemoServiceMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96179BECEF982249ECBE42F7 /* DemoServiceMetadata.swift */; };
 		47451F30C7457324EEBE2C0F /* ProductMasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6473FC0B93608D6113EA8D72 /* ProductMasterViewController.swift */; };
 		4DE345FD136A4AEE84F44A9B /* DemoServiceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B8D4AD36F4553DC46828E25 /* DemoServiceFactory.swift */; };
@@ -95,6 +96,7 @@
 		1277F7601F8E66AC0060AF58 /* SAPLogo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SAPLogo@2x.png"; sourceTree = "<group>"; };
 		16A8532D933DE80E9FD850C0 /* OnboardingFlowProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = OnboardingFlowProvider.swift; path = Onboarding/OnboardingFlowProvider.swift; sourceTree = "<group>"; };
 		1B8D4AD36F4553DC46828E25 /* DemoServiceFactory.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DemoServiceFactory.swift; path = "Proxy Classes/internal/DemoServiceFactory.swift"; sourceTree = "<group>"; };
+		26E5F5AD221C12A6005FBDDD /* MultiUserOnboardingIDManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiUserOnboardingIDManager.swift; sourceTree = "<group>"; };
 		2A4C9ACAC270760EEA56EF7C /* ProductDetailViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ProductDetailViewController.swift; path = ViewControllers/Product/ProductDetailViewController.swift; sourceTree = "<group>"; };
 		33E4A52BF1D82FFFDE5306FD /* ODataOnboardingStep.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ODataOnboardingStep.swift; path = OData/ODataOnboardingStep.swift; sourceTree = "<group>"; };
 		37C28736C31BCAE33A07EC31 /* LocalizedStrings.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LocalizedStrings.swift; sourceTree = "<group>"; };
@@ -102,7 +104,7 @@
 		4B8B46512D882C2E786745D6 /* ConfigurationProvider.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = ConfigurationProvider.plist; path = Onboarding/ConfigurationProvider.plist; sourceTree = "<group>"; };
 		52CBA53CBBB0E58952D41C66 /* ApplicationUIManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ApplicationUIManager.swift; path = Onboarding/ApplicationUIManager.swift; sourceTree = "<group>"; };
 		6473FC0B93608D6113EA8D72 /* ProductMasterViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ProductMasterViewController.swift; path = ViewControllers/Product/ProductMasterViewController.swift; sourceTree = "<group>"; };
-		6B49BDC7DA8F1D6A29A37861 /* Base */ = {isa = PBXFileReference; includeInIndex = ""; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Category.storyboard; sourceTree = "<group>"; };
+		6B49BDC7DA8F1D6A29A37861 /* Base */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Category.storyboard; sourceTree = "<group>"; };
 		6E77D1F69B98F3AB5376FEC0 /* CollectionsViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CollectionsViewController.swift; path = ViewControllers/CollectionsViewController.swift; sourceTree = "<group>"; };
 		7A1315B51D4B982000A5DA56 /* MultiUserSampleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MultiUserSampleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A1315B81D4B982000A5DA56 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -134,11 +136,11 @@
 		C8E902A13BED8B018D252DAF /* CellCreationHelper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CellCreationHelper.swift; path = Utils/CellCreationHelper.swift; sourceTree = "<group>"; };
 		CB909D801E38CA8800218154 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D4927792460C46E2CA9A0EC5 /* DemoServiceStaticResolver.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DemoServiceStaticResolver.swift; path = "Proxy Classes/internal/DemoServiceStaticResolver.swift"; sourceTree = "<group>"; };
-		D5AC8B072D34B0EC9B3ACC83 /* Base */ = {isa = PBXFileReference; includeInIndex = ""; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Supplier.storyboard; sourceTree = "<group>"; };
+		D5AC8B072D34B0EC9B3ACC83 /* Base */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Supplier.storyboard; sourceTree = "<group>"; };
 		E142A847EAEE71CD0F428E62 /* SAPFioriLoadingIndicator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SAPFioriLoadingIndicator.swift; path = Utils/SAPFioriLoadingIndicator.swift; sourceTree = "<group>"; };
 		E5611E89C734E7D58CE06069 /* AlertHelper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AlertHelper.swift; path = Utils/AlertHelper.swift; sourceTree = "<group>"; };
 		EEE9034D2B4A6C0CE8E44264 /* DemoServiceMetadataParser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DemoServiceMetadataParser.swift; path = "Proxy Classes/internal/DemoServiceMetadataParser.swift"; sourceTree = "<group>"; };
-		FC933DEC2D7387688A8A8C4F /* Base */ = {isa = PBXFileReference; includeInIndex = ""; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Product.storyboard; sourceTree = "<group>"; };
+		FC933DEC2D7387688A8A8C4F /* Base */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Product.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -244,6 +246,7 @@
 			isa = PBXGroup;
 			children = (
 				7A1315B81D4B982000A5DA56 /* AppDelegate.swift */,
+				26E5F5AD221C12A6005FBDDD /* MultiUserOnboardingIDManager.swift */,
 				CBCA7A9B1E3778A9001AF49E /* Main.storyboard */,
 				7A1315C11D4B982000A5DA56 /* Assets.xcassets */,
 				7A1315C31D4B982000A5DA56 /* LaunchScreen.storyboard */,
@@ -503,6 +506,7 @@
 				063CBDA89FF4AA7AEEF90877 /* ApplicationUIManager.swift in Sources */,
 				F22C2A7D2B76B1AD950F2364 /* OnboardingErrorHandler.swift in Sources */,
 				F335E8B13BF981E8C83C8EA9 /* LocalizedStrings.swift in Sources */,
+				26E5F5AE221C12A6005FBDDD /* MultiUserOnboardingIDManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

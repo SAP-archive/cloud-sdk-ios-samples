@@ -12,3 +12,22 @@ Check out these tutorials and courses for deep-dives into various areas
 
 ## TechEd
 Watch SAP TechEd sessions on mobility online at [SAP Teched Online](http://www.sapteched.com/online).
+
+
+#  Steps to support multiple users in an app
+
+## Prerequisits
+1. existing SAP  account to access Cloud Platform mobile services
+1. The latest version of the Assistant application
+
+## Overview
+To support multi-user scenarios you should  replace the default `SingleUserOnboardingIDManager` to your custom implementation in the `OnboardingController`. This class must implement the OnboardingIDManaging protocol and is responsible to store the `onboardingIDs` as well to decide to create a new onboarding session or restore an existing one using the `onboardingID`. It is up to your application design how you support these options.
+In this sample a view controller will be presented to the users where the user can select one from the existing sessions or create a new one.
+
+## Steps
+  
+1. Create a new Swift class named `MultiUserOnboardingIDManager` and implement the `OnboardingIDManaging` protocol with a simple implementation first: stores the id, returns with `.onboard` when it is asked in `flowToStart`... To make it more realistic we introduce a `User` type which contains a `name` and the `onboardingID`. This will be managed by the `MultiUserOnboardingIDManager`. It worth to create some private helper methods to store, retrieve the `Users`. This way we the users can see user names instead of `onboardingIDs`
+
+
+
+

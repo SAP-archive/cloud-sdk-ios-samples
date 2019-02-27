@@ -90,8 +90,29 @@ public class MultiUserOnboardingIDManager: OnboardingIDManaging {
 extension MultiUserOnboardingIDManager {
     
     public func flowToStart(completionHandler: @escaping (OnboardingFlow.FlowType) -> Void) {
-        self.selectedUserName = "test"
-        completionHandler(.onboard)
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        guard let selectUserViewController = storyboard.instantiateViewController(withIdentifier: SelectUserViewController.storyboardID) as? SelectUserViewController else {
+            fatalError("Improper type of loaded view controller in storyboard!\nViewController with id 'UserSelectorTableViewController' must be class of UserSelectorTableViewController")
+        }
+        
+        let navCtrl = UINavigationController(rootViewController: selectUserViewController)
+        selectUserViewController.flowSelectionCompletion = { username, flowType in
+            self.selectedUserName = username
+            navCtrl.dismiss(animated: true) {
+                // call completion when the view controller dismissed to avoid presentation issues
+                completionHandler(flowType)
+            }
+        }
+        
+        selectUserViewController.users = self.allUsers()
+        
+        guard let topViewController = ModalUIViewControllerPresenter.topPresentedViewController() else {
+            fatalError("There must be at least a view controller in the app")
+        }
+        // make sure UI handling is performed on the main queue
+        DispatchQueue.main.async {
+            topViewController.present(navCtrl, animated: true)
+        }
     }
     
     public func store(onboardingID: UUID, completionHandler: @escaping (Error?) -> Void) {

@@ -16,6 +16,7 @@
 		1277F7611F8E66AF0060AF58 /* SAPLogo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1277F7601F8E66AC0060AF58 /* SAPLogo@2x.png */; };
 		234B8AE7FFE9D4202488C249 /* CollectionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E77D1F69B98F3AB5376FEC0 /* CollectionsViewController.swift */; };
 		26E5F5AE221C12A6005FBDDD /* MultiUserOnboardingIDManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E5F5AD221C12A6005FBDDD /* MultiUserOnboardingIDManager.swift */; };
+		26E5F5B4221EEEE3005FBDDD /* SelectUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E5F5B3221EEEE2005FBDDD /* SelectUserViewController.swift */; };
 		2B5CA8A945A6330818B6D383 /* DemoServiceMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96179BECEF982249ECBE42F7 /* DemoServiceMetadata.swift */; };
 		47451F30C7457324EEBE2C0F /* ProductMasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6473FC0B93608D6113EA8D72 /* ProductMasterViewController.swift */; };
 		4DE345FD136A4AEE84F44A9B /* DemoServiceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B8D4AD36F4553DC46828E25 /* DemoServiceFactory.swift */; };
@@ -97,6 +98,7 @@
 		16A8532D933DE80E9FD850C0 /* OnboardingFlowProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = OnboardingFlowProvider.swift; path = Onboarding/OnboardingFlowProvider.swift; sourceTree = "<group>"; };
 		1B8D4AD36F4553DC46828E25 /* DemoServiceFactory.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DemoServiceFactory.swift; path = "Proxy Classes/internal/DemoServiceFactory.swift"; sourceTree = "<group>"; };
 		26E5F5AD221C12A6005FBDDD /* MultiUserOnboardingIDManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiUserOnboardingIDManager.swift; sourceTree = "<group>"; };
+		26E5F5B3221EEEE2005FBDDD /* SelectUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectUserViewController.swift; sourceTree = "<group>"; };
 		2A4C9ACAC270760EEA56EF7C /* ProductDetailViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ProductDetailViewController.swift; path = ViewControllers/Product/ProductDetailViewController.swift; sourceTree = "<group>"; };
 		33E4A52BF1D82FFFDE5306FD /* ODataOnboardingStep.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ODataOnboardingStep.swift; path = OData/ODataOnboardingStep.swift; sourceTree = "<group>"; };
 		37C28736C31BCAE33A07EC31 /* LocalizedStrings.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LocalizedStrings.swift; sourceTree = "<group>"; };
@@ -247,6 +249,7 @@
 			children = (
 				7A1315B81D4B982000A5DA56 /* AppDelegate.swift */,
 				26E5F5AD221C12A6005FBDDD /* MultiUserOnboardingIDManager.swift */,
+				26E5F5B3221EEEE2005FBDDD /* SelectUserViewController.swift */,
 				CBCA7A9B1E3778A9001AF49E /* Main.storyboard */,
 				7A1315C11D4B982000A5DA56 /* Assets.xcassets */,
 				7A1315C31D4B982000A5DA56 /* LaunchScreen.storyboard */,
@@ -499,6 +502,7 @@
 				2B5CA8A945A6330818B6D383 /* DemoServiceMetadata.swift in Sources */,
 				008EB9A31FCB9CF21D7FC27F /* OfflineODataController.swift in Sources */,
 				234B8AE7FFE9D4202488C249 /* CollectionsViewController.swift in Sources */,
+				26E5F5B4221EEEE3005FBDDD /* SelectUserViewController.swift in Sources */,
 				7E8C5E1BB9BD03C422F2A601 /* ProductDetailViewController.swift in Sources */,
 				EB154335DD45D318E690525F /* ODataOnboardingStep.swift in Sources */,
 				5304FC003766DD4438A906DD /* OnboardingFlowProvider.swift in Sources */,

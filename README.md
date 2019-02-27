@@ -46,6 +46,13 @@ Open the Xcode build settings of the sample app project and add the required fra
 
 Some apps may require further configuration steps and have more dependencies that are listed in the readme files of each app.
 
+# Known Issues
+We are not aware of general problems. 
+If any sample comes with limitations or cases not considered in the sample, they are listed in the sample app readme itself.
+
+In case you cannot compile the sample projects and see errors like `Module compiled with Swift 4.2.1 cannot be imported by the Swift 5.0 compiler` you are using incompatible versions of Xcode and the SDK for iOS. 
+Please check the requirements on the SDK download page again - we list the exact version of Xcode required to be used with each SDK version there.
+
 # How to obtain support
 If you have questions or feedback, please visit the [SAP Community Forum](https://answers.sap.com/tags/73554900100800000743) on the SAP Cloud Platform SDK for iOS.
 

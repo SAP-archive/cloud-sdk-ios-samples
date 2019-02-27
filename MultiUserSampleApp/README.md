@@ -27,6 +27,34 @@ In this sample a view controller will be presented to the users where the user c
 ## Steps
   
 1. Create a new Swift class named `MultiUserOnboardingIDManager` and implement the `OnboardingIDManaging` protocol with a simple implementation first: stores the id, returns with `.onboard` when it is asked in `flowToStart`... To make it more realistic we introduce a `User` type which contains a `name` and the `onboardingID`. This will be managed by the `MultiUserOnboardingIDManager`. It worth to create some private helper methods to store, retrieve the `Users`. This way we the users can see user names instead of `onboardingIDs`
+1. Create a new `UITableViewController` descendant Swift class and name it `SelectUserViewController`. This will present the list of existing onboarding sessions.
+    1. Create a small new class for the presented UITableViewCells used by SelectUserViewController. Name it `UserTableViewCell`.
+        1. The cell should have a UILabel as an IBOutlet.
+        1. create a const cellID: will be used to get the cell, must be set in the storyboard as well
+            ```
+            static let cellID = "UserSelectorCell"
+            ```
+    1. Declare two properties:
+        1. flowSelectionCompletion: the completion handler to call when the user selected the action
+        1. users: array of `User`s; set by the `MultiUserOnboardingIDManager` with the available users and used by the tableview to present the items
+    1. Create new IBAction for the add user option: addUser
+    1. Remove the `numberOfSections` method as we only have one section
+    1. In the `tableView(_ tableView: UITableView, numberOfRowsInSection section: Int)` just return with the users.count
+    1. uncomment the `cellForRowAt: indexPath` method and dequeue the cell with the id. Fill the cell with the user name blonging to that line/indexPath
+        ```
+        cell.userName.text = "\(users[indexPath.row].name)"
+        ```
+    1. implement the `didSelectRowAt indexPath` method to handle the user selection of items. Just call back on the flowCompletionHandler with the username and onboardingID  
+    1. remove any other unnecessary commented code snippet from the file
+1. Create the UI in the storyboard for the SelectUserViewController. Open the Main.storyboard
+    1. Drop in a new UITablewViewController scene
+    1. Set the class of the view controller to `SelectUserViewController`
+    1. Set the `Storyboard ID` to 'SelectUserViewController'
+    1. Select the prototype cell and set its class to `UserTableViewCell`
+    1. Set the `identifier` of the prototype cell to 'UserSelectorCell'
+    
+    
+
 
 
 

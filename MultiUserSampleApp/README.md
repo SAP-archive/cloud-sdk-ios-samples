@@ -38,7 +38,82 @@ In this sample a view controller will be presented to the users where the user c
 
 ### Create a new onboardingID manager
 
-Create a new Swift class named `MultiUserOnboardingIDManager` and implement the `OnboardingIDManaging` protocol with a simple implementation first: stores the id, returns with `.onboard` when it is asked in `flowToStart`... To make it more realistic we introduce a `User` type which contains a `name` and the `onboardingID`. This will be managed by the `MultiUserOnboardingIDManager`. It worth to create some private helper methods to store, retrieve the `Users`. This way the users can see user names instead of `onboardingIDs` and the type can be exteneded later on demand.
+Create a new Swift class named `MultiUserOnboardingIDManager` and implement the `OnboardingIDManaging` protocol with a simple implementation first: stores the id, returns with `.onboard` when it is asked in `flowToStart`... To make it more realistic we introduce a `User` type which contains a `name` and the `onboardingID`. This will be managed by the `MultiUserOnboardingIDManager`. Auto-implement the Codable protocol to ease the persistatition and restoration. Declare a variable `coder` and assign the `PlistCoder` from `SAPFoundation`. This will be used to run the Codable protocol. Also declare an error type used to signal any problem.
+    
+    ```swift
+    public enum UserError: Error {
+        case cannotLoad
+        case internalError
+    }
+    
+    public struct User: Codable {
+        let name: String
+        let onboardingID: UUID
+    }
+    // PlistCoder to ease the code/decode of User types
+    let coder = SAPFoundation.PlistCoder()
+    ```
+It worth to create some private helper methods to store/retrieve the `Users`. This way the users can see user names instead of `onboardingIDs` and the type can be exteneded later on demand.
+Let's differentiate the keys in the user defaults with a custom prefix. Also use the
+    ```swift
+    let OnboardedUserKeyPrefix = "Onboarded_"
+    ```
+Implement the base funtionality: create and read items
+
+    ```swift
+    // MARK: - Private methods
+    private func userdefaultsKey(for onboardingID: UUID) -> String {
+        return "\(OnboardedUserKeyPrefix)\(onboardingID)"
+    }
+
+    private func user(for onboardingID: UUID) throws -> User {
+        let key = userdefaultsKey(for: onboardingID)
+        guard let userData = UserDefaults.standard.object(forKey: key) as? Data else {
+            throw UserError.cannotLoad
+        }
+        let user = try coder.decode(User.self, from: userData)
+        return user
+    }
+
+    private func saveOnboardedUser(_ user: User) throws {
+        let key = userdefaultsKey(for: user.onboardingID)
+        let userData = try coder.encode(user)
+        UserDefaults.standard.set(userData, forKey: key)
+    }
+
+    private func removeOnboardedUser(_ onboardingID: UUID) {
+        let key = userdefaultsKey(for: onboardingID)
+        UserDefaults.standard.removeObject(forKey: key)
+    }
+    ```
+    
+Implement a public function which will be used to list all the items
+
+    ```swift
+    /// Returns all the onobarded users
+    ///
+    /// - Returns: array of users currently stored in the UserDefaults
+    public func allUsers() -> [User] {
+        var users = [User]()
+        
+        for key in UserDefaults.standard.dictionaryRepresentation().keys where key.hasPrefix(OnboardedUserKeyPrefix) {
+            let onboardingIDString = key.dropFirst(OnboardedUserKeyPrefix.count)
+            do {
+                guard let onboardingID = UUID(uuidString: String(onboardingIDString)) else {
+                    Logger.root.error("Failed to create UUID for key: \(onboardingIDString)")
+                    continue
+                }
+                let user = try self.user(for: onboardingID)
+                users.append(user)
+            }
+            catch {
+                Logger.root.error("Failed to load User for key: \(onboardingIDString)", error: error)
+            }
+        }
+        
+        return users
+    }
+    ```
 
 ### Create the UI to interact with the user
 
@@ -49,23 +124,24 @@ Create a new `UITableViewController` descendant Swift class and name it `SelectU
 1. Create a small new class for the presented UITableViewCells used by SelectUserViewController. Name it `UserTableViewCell`.
 1. The cell should have a UILabel as an IBOutlet.
 1. create a const cellID: will be used to get the cell, must be set in the storyboard as well
-```
-static let cellID = "UserSelectorCell"
-```
+    ```swift
+    static let cellID = "UserSelectorCell"
+    ```
 1. Declare two properties:
-1. flowSelectionCompletion: the completion handler to call when the user selected the action
-1. users: array of `User`s; set by the `MultiUserOnboardingIDManager` with the available users and used by the tableview to present the items
-1. Create new IBAction for the add user option: addUser
+    1. `flowSelectionCompletion`: the completion handler to call when the user selected the action
+    1. users: array of `User`s; set by the `MultiUserOnboardingIDManager` with the available users and used by the tableview to present the items
+1. Create new IBAction for the add user option: `addUser`
 1. Remove the `numberOfSections` method as we only have one section
 1. In the `tableView(_ tableView: UITableView, numberOfRowsInSection section: Int)` just return with the users.count
 1. uncomment the `cellForRowAt: indexPath` method and dequeue the cell with the id. Fill the cell with the user name blonging to that line/indexPath
-```
-cell.userName.text = "\(users[indexPath.row].name)"
-```
+    ```swift
+    cell.userName.text = "\(users[indexPath.row].name)"
+    ```
 1. implement the `didSelectRowAt indexPath` method to handle the user selection of items. Just call back on the flowCompletionHandler with the username and onboardingID  
 1. remove any other unnecessary commented code snippet from the file
 
 #### Create the UI in storyboard for the SelectUserViewController
+
 Open the Main.storyboard
 1. Drop in a new UITablewViewController scene
 1. Set the class of the view controller to `SelectUserViewController`
@@ -89,11 +165,11 @@ var selectedUserName: String?
 ```
 When the other delegate methods are called make sure to nil out the property!
 1. set the available users on `SelectUserViewController`
-```
+```swift
 selectUserViewController.users = self.allUsers()
 ```
 1. present the view controller in a NavigationController to be able to present the buttons in the Navigation Bar. Make sure you call it on the main queue
-```
+```swift
 DispatchQueue.main.async {
 topViewController.present(navCtrl, animated: true)
 }

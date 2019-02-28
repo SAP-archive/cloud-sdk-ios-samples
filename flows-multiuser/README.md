@@ -19,6 +19,9 @@ In this sample a view controller will be presented to the users where the user c
 
 # Steps required to support multiple users
 
+This app already shows the working end-state of a multi-user enabled app.
+Here we describe the required changes and enhancements for that in more detail.
+
 ## Create a new onboardingID manager
 
 Create a new Swift class named `MultiUserOnboardingIDManager` and implement the `OnboardingIDManaging` protocol with a simple implementation first: stores the id, returns with `.onboard` when it is asked in `flowToStart`... To make it more realistic we introduce a `User` type which contains a `name` and the `onboardingID`. This will be managed by the `MultiUserOnboardingIDManager`. Auto-implement the Codable protocol to ease the persistatition and restoration. Declare a variable `coder` and assign the `PlistCoder` from `SAPFoundation`. This will be used to run the Codable protocol. Also declare an error type used to signal any problem.
@@ -36,12 +39,12 @@ Create a new Swift class named `MultiUserOnboardingIDManager` and implement the 
     // PlistCoder to ease the code/decode of User types
     let coder = SAPFoundation.PlistCoder()
     ```
-It worth to create some private helper methods to store/retrieve the `Users`. This way the users can see user names instead of `onboardingIDs` and the type can be exteneded later on demand.
+It is worth to create some private helper methods to store/retrieve the `Users`. This way the users can see user names instead of `onboardingIDs` and the type can be extended later on demand.
 Let's differentiate the keys in the user defaults with a custom prefix. Also use the
     ```swift
     let OnboardedUserKeyPrefix = "Onboarded_"
     ```
-Implement the base funtionality: create and read items
+Implement the base functionality: create and read items
 
     ```swift
     // MARK: - Private methods
@@ -125,15 +128,15 @@ Create a new `UITableViewController` descendant Swift class and name it `SelectU
 
 ### Create the UI in storyboard for the SelectUserViewController
 
-Open the Main.storyboard
+Open the `Main.storyboard`
 1. Drop in a new UITablewViewController scene
 1. Set the class of the view controller to `SelectUserViewController`
-1. Set the `Storyboard ID` to 'SelectUserViewController'
+1. Set the `Storyboard ID` to `SelectUserViewController`
 1. Select the prototype cell and set its class to `UserTableViewCell`
 1. Add a UILabel to the cell and bind it to the userName outlet. Don't forget to set up the autolayout constraints properly
-1. Set the `identifier` of the prototype cell to 'UserSelectorCell'
+1. Set the `identifier` of the prototype cell to `UserSelectorCell`
 1. drop a `NavigationItem` to the view controller
-1. drop a `UIBarButtonItem` to the right-top, set its `System Item` to `Add` in the 'Attributes Inspector'
+1. drop a `UIBarButtonItem` to the right-top, set its `System Item` to `Add` in the *Attributes Inspector*
 1. Bind the action of this button to the `addUser` IBAction
 
 ## Bind together the pieces to make it work

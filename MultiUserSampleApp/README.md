@@ -15,17 +15,27 @@ Watch SAP TechEd sessions on mobility online at [SAP Teched Online](http://www.s
 
 ----
 
-#  Steps to support multiple users in an app
+#  Supporting multiple users in an app
 
 ## Overview
+
+### What is multi-user scenario
+We talk about multi-user scenario when an application has multiple persisted user data at the same time and so anyone can be restored to be used in the app. However only one of them can be active or opened.  When an application is used more people but the application gets reset before the next user onboards then it is a single user scenario - the default how applications are generated. 
+
+### Quick overview
 To support multi-user scenarios you should  replace the default `SingleUserOnboardingIDManager` to your custom implementation in the `OnboardingController`. This class must implement the OnboardingIDManaging protocol and is responsible to store the `onboardingIDs` as well to decide to create a new onboarding session or restore an existing one using the `onboardingID`. It is up to your application design how you support these options.
 In this sample a view controller will be presented to the users where the user can select one from the existing sessions or create a new one.
 
 ## Prerequisits
-1. existing SAP  account to access Cloud Platform mobile services
-1. The latest version of the Assistant application
+1. existing SAP  account to access `Cloud Platform mobile services`  
+1. The latest version of the `SAP Cloud Platform SDK for iOS Assistant` application
 
-## Steps
+### Initial setup
+1. The `Cloud Platform mobile services` configuration for this application must be created on the server. Import the `com.sap.multiuser.sample_1.0.zip` at the `Mobile Services Cockpit` under the `Mobile Applications` / `Native/Hybrid`
+1. After downloading the application the server parameters must be updated in the iOS application as well so it will connect to your server
+    
+
+## Steps required to support multiple users
 
 ### Create a new onboardingID manager
 

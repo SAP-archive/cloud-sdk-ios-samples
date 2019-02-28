@@ -31,7 +31,7 @@ In this sample a view controller will be presented to the users where the user c
 1. The latest version of the `SAP Cloud Platform SDK for iOS Assistant` application
 
 ### Initial setup
-1. The `Cloud Platform mobile services` configuration for this application must be created on the server. Create one or import the `com.sap.multiuser.sample_1.0.zip` at the `Mobile Services Cockpit` under the `Mobile Applications` / `Native/Hybrid`. This is a simple configuration which points to the publicly available read/write OData service at https://services.odata.org 
+1. The `Cloud Platform mobile services` configuration for this application must be created on the server. Create one or import the [com.sap.multiuser.sample_1.0.zip](com.sap.multiuser.sample_1.0.zip) at the `Mobile Services Cockpit` under the `Mobile Applications` / `Native/Hybrid`. This is a simple configuration which points to the publicly available read/write OData service at https://services.odata.org 
 1. After downloading this iOS application the server parameters must be updated as well so it will connect to your server. To copy the proper URL go to the `Cloud Platform mobile services` cockpit, select the `Multi User Sample` under the `Mobile Applications` / `Native/Hybrid`. Go to the `APIs` tab. Under the `APIs` section there is a `Server` item with a URL. This is your applications base server URL. Open the `ConfigurationProvider.plist` in the `Onboarding` folder. Update the value of the `host` key to the host part of the `Server` URL (something like https://hcpms-xyztrial.hanatrial.ondemand.com) without the `https://` prefix and without the '/' suffix.
 
 ## Steps required to support multiple users

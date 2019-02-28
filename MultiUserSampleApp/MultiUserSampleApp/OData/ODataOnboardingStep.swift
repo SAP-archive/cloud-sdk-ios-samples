@@ -35,7 +35,7 @@ open class ODataOnboardingStep: OnboardingStep {
         context.presentationDelegate.setInfoText("Synchronizing Data")
 
         // Adjust this path so it can be called after authentication and returns an HTTP 200 code. This is used to validate the authentication was successful.
-        let configurationURL = URL(string: "\(<#Add your Cloud Platform mobile services Server URL#>)/odata.readwrite.test.service")!
+        let configurationURL = URL(string: "\((context.info[.sapcpmsSettingsParameters] as! SAPcpmsSettingsParameters).backendURL)/odata.readwrite.test.service")!
         
         do {
             let offlineOdataController = OfflineODataController()

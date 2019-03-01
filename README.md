@@ -14,12 +14,16 @@ Each sample app sits in a separate folder of this repository and is fully self-c
 | [Maps Bikes](maps-bikes)                  | Illustrates a broad range of Maps features using a bike rental example |
 | [OCR AAA Card Scan](ocr-AAACardScan)      | Shows how to configure the OCR capabilities to read structured, known content |
 | [Swift Observations](swift-observations)  | Explains some details on how to avoid memory leaks with Swift Observations |
+| [Multi User](flows-multiuser)             | A sample application for multi-user support in a single app |
 
 # Requirements
 Any iOS development requires using a Mac and the development tools from Apple.
 You need to have the current version of [Xcode](https://developer.apple.com/xcode/) installed.
 
 All apps depend on the SAP Cloud Platform SDK for iOS frameworks that can be downloaded from the [SAP Community](https://www.sap.com/developer/trials-downloads/additional-downloads/sap-cloud-platform-sdk-for-ios-14485.html).
+
+Some apps require an SAP Cloud Platform Mobile Services account.
+You can register for a [trial](https://account.hanatrial.ondemand.com/#/home/welcome), if you do not have a production account already.
 
 Please refer to the specific sample app requirements for exact version requirements.
 Typically, the *latest* version is what you need.

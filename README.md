@@ -60,7 +60,10 @@ In case you cannot compile the sample projects and see errors like `Module compi
 Please check the requirements on the SDK download page again - we list the exact version of Xcode required to be used with each SDK version there.
 
 ## How to obtain support
-If you have questions or feedback, please visit the [SAP Community Forum](https://answers.sap.com/tags/73554900100800000743) on the SAP Cloud Platform SDK for iOS.
+In case you found a bug or have any problems when trying to build and run the samples, please create an issue on this repository.
+Use the existing labels to classify your problem and help us giving you the best possible support.
+
+If you have general questions or feedback on any of the used SDK components, please visit the [SAP Community Forum](https://answers.sap.com/tags/73554900100800000743) on the SAP Cloud Platform SDK for iOS.
 
 You can find more tutorials etc. in our [SAP Community for SDK for iOS](https://developers.sap.com/topics/cloud-platform-sdk-for-ios.html).
 
